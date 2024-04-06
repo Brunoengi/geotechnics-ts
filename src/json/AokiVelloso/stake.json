@@ -1,0 +1,128 @@
+{
+  "1": {
+    "originals":{
+      "F1": 2.5,
+      "F2": 5.0
+    },
+    "Laprovitera_Benegas":{
+      "F1": 2.5,
+      "F2": 3.0
+    },
+    "Monteiro":{
+      "F1": 2.3,
+      "F2": 3
+    }
+  },
+  "2": {
+    "originals":{
+      "F1": 2.5,
+      "F2": 5.0
+    },
+    "Laprovitera_Benegas":{
+      "F1": 2.5,
+      "F2": 3.0
+    },
+    "Monteiro":{
+      "F1": 2.3,
+      "F2": 3.2
+    }
+  },
+  "3": {
+    "originals":{
+      "F1": 1.75,
+      "F2": 3.5
+    },
+    "Laprovitera_Benegas":{
+      "F1": 2.4,
+      "F2": 3.4
+    },
+    "Monteiro":{
+      "F1": 1.75,
+      "F2": 3.5
+    }
+  },
+  "4": {
+    "originals":{
+      "F1": 1.75,
+      "F2": 3.5
+    },
+    "Laprovitera_Benegas":{
+      "F1": 2.0,
+      "F2": 3.5
+    },
+    "Monteiro":{
+      "F1": 2.5,
+      "F2": 3.5
+    }
+  },
+  "5": {
+    "originals":{
+      "F1": 1.75,
+      "F2": 3.5
+    },
+    "Laprovitera_Benegas":{
+      "F1": 2.0,
+      "F2": 3.5
+    },
+    "Monteiro":{
+      "F1": 1.2,
+      "F2": 2.3
+    }
+  },
+  "6": {
+    "originals":{
+      "F1": 3.0,
+      "F2": 6.0
+    },
+    "Laprovitera_Benegas":{
+      "F1": 4.5,
+      "F2": 4.5
+    },
+    "Monteiro":{
+      "F1": 3.5,
+      "F2": 4.5
+    }
+  },
+  "7": {
+    "originals":{
+      "F1": 4.2,
+      "F2": 3.9
+    },
+    "Laprovitera_Benegas":{
+      "F1": 4.2,
+      "F2": 3.9
+    },
+    "Monteiro":{
+      "F1": 4.2,
+      "F2": 3.9
+    }
+  },
+  "8": {
+    "originals":{
+      "F1": 2.2,
+      "F2": 2.4
+    },
+    "Laprovitera_Benegas":{
+      "F1": 2.2,
+      "F2": 2.4
+    },
+    "Monteiro":{
+      "F1": 2.2,
+      "F2": 2.4
+    }
+  },
+  "9": {
+    "originals":{
+      "F1": 3.0,
+      "F2": 3.8
+    },
+    "Laprovitera_Benegas":{
+      "F1": 3.0,
+      "F2": 3.8
+    },
+    "Monteiro":{
+      "F1": 3.0,
+      "F2": 3.8
+    }
+  }
+}

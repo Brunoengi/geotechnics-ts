@@ -1,0 +1,214 @@
+{
+  "S": {
+    "originals":{
+      "kav": 1000,
+      "alfaav": 1.4
+    },
+    "Danziger_Velloso_Laprovitera":{
+      "kav": 600,
+      "alfaav": 1.4
+    },
+    "Monteiro":{
+      "kav": 730,
+      "alfaav": 2.1
+    }
+  },
+  "SM": {
+    "originals":{
+      "kav": 800,
+      "alfaav": 2.0
+    },
+    "Danziger_Velloso_Laprovitera":{
+      "kav": 530,
+      "alfaav": 1.9
+    },
+    "Monteiro":{
+      "kav": 680,
+      "alfaav": 2.3
+    }
+  },
+  "SMC": {
+    "originals":{
+      "kav": 700,
+      "alfaav": 2.4
+    },
+    "Danziger_Velloso_Laprovitera":{
+      "kav": 530,
+      "alfaav": 2.4
+    },
+    "Monteiro":{
+      "kav": 630,
+      "alfaav": 2.4
+    }
+  },
+  "SC": {
+    "originals":{
+      "kav": 600,
+      "alfaav": 3.0
+    },
+    "Danziger_Velloso_Laprovitera":{
+      "kav": 530,
+      "alfaav": 3.0
+    },
+    "Monteiro":{
+      "kav": 540,
+      "alfaav": 2.8
+    }
+  },
+  "SCM": {
+    "originals":{
+      "kav": 500,
+      "alfaav": 2.8
+    },
+    "Danziger_Velloso_Laprovitera":{
+      "kav": 530,
+      "alfaav": 2.8
+    },
+    "Monteiro":{
+      "kav": 570,
+      "alfaav": 2.9
+    }
+  },
+  "M": {
+    "originals":{
+      "kav": 400,
+      "alfaav": 3.0
+    },
+    "Danziger_Velloso_Laprovitera":{
+      "kav": 480,
+      "alfaav": 3
+    },
+    "Monteiro":{
+      "kav": 480,
+      "alfaav": 3.2
+    }
+
+  },
+  "MS": {
+    "originals":{
+      "kav": 550,
+      "alfaav": 2.2
+    },
+    "Danziger_Velloso_Laprovitera":{
+      "kav": 480,
+      "alfaav": 3.0
+    },
+    "Monteiro":{
+      "kav": 500,
+      "alfaav": 3.0
+    }
+  },
+  "MSC": {
+    "originals":{
+      "kav": 450,
+      "alfaav": 2.8
+    },
+    "Danziger_Velloso_Laprovitera":{
+      "kav": 380,
+      "alfaav": 3.0
+    },
+    "Monteiro":{
+      "kav": 450,
+      "alfaav": 3.2
+    }
+  },
+  "MC": {
+    "originals":{
+      "kav": 230,
+      "alfaav": 3.4
+    },
+    "Danziger_Velloso_Laprovitera":{
+      "kav": 300,
+      "alfaav": 3.4
+    },
+    "Monteiro":{
+      "kav": 320,
+      "alfaav": 3.6
+    }
+  },
+  "MCS": {
+    "originals":{
+      "kav": 250,
+      "alfaav": 3.0
+    },
+    "Danziger_Velloso_Laprovitera":{
+      "kav": 380,
+      "alfaav": 3.0
+    },
+    "Monteiro":{
+      "kav": 400,
+      "alfaav": 3.3
+    }
+  },
+  "C": {
+    "originals":{
+      "kav": 200,
+      "alfaav": 6.0
+    },
+    "Danziger_Velloso_Laprovitera":{
+      "kav": 250,
+      "alfaav": 6.0
+    },
+    "Monteiro":{
+      "kav": 250,
+      "alfaav": 5.5
+    }
+  },
+  "CS": {
+    "originals":{
+      "kav": 350,
+      "alfaav": 2.4
+    },
+    "Danziger_Velloso_Laprovitera":{
+      "kav": 480,
+      "alfaav": 4.0
+    },
+    "Monteiro":{
+      "kav": 440,
+      "alfaav": 3.2
+    }
+  },
+  "CSM": {
+    "originals":{
+      "kav": 300,
+      "alfaav": 2.8
+    },
+    "Danziger_Velloso_Laprovitera":{
+      "kav": 300,
+      "alfaav": 4.5
+    },
+    "Monteiro":{
+      "kav": 300,
+      "alfaav": 3.8
+    }
+  },
+  "CM": {
+    "originals":{
+      "kav": 220,
+      "alfaav": 4.0
+    },
+    "Danziger_Velloso_Laprovitera":{
+      "kav": 250,
+      "alfaav": 5.5
+    },
+    "Monteiro":{
+      "kav": 260,
+      "alfaav": 4.5
+    }
+  },
+  "CMS": {
+    "originals":{
+      "kav": 330,
+      "alfaav": 3.0
+    },
+    "Danziger_Velloso_Laprovitera":{
+      "kav": 300,
+      "alfaav": 5.0
+    },
+    "Monteiro":{
+      "kav": 330,
+      "alfaav": 4.1
+    }
+  }
+  
+}
