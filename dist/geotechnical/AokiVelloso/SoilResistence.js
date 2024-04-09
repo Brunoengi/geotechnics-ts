@@ -1,7 +1,3 @@
-import { SoilParams } from "./SoilParams.js";
-import { StakeParams } from "./StakeParams.js";
-import SPT from "../geotechnicalTests/SPT.js";
-import { CircularStake } from "../stake/CircularStake.js";
 export class SoilResistence {
     constructor(stakeSection, soilParams, stakeParams) {
         this._stake = stakeSection;
@@ -19,7 +15,6 @@ export class SoilResistence {
     sumResistence() {
         const referenceLayer = Math.floor(this._stake._inicialQuota + this._stake._height);
         const params = Object.assign({ inicialStakeQuota: this._stake._inicialQuota, heightStake: this._stake._height, depthStake: this._stake._inicialQuota + this._stake._height, referenceLayer: referenceLayer, baseArea: this._stake._area, perimeter: this._stake._perimeter, F1: this._stakeParams._myParamStake.F1, F2: this._stakeParams._myParamStake.F2 }, this._soilParams._LayersProps[referenceLayer]);
-        console.log(params);
         const resistenceBase = this.calculateBaseResistence(params.kav, this.calculateNbar(params.depthStake), params.F1, params.baseArea);
         this.setBaseResistence(resistenceBase);
         let allSideResistence = [];
@@ -82,40 +77,3 @@ export class SoilResistence {
         return alfaav * kav * NSPTLayer * perimeter * deltaL / F2;
     }
 }
-const mySPT = new SPT([
-    { NSPT: 12, typeSoil: 'SM' },
-    { NSPT: 12, typeSoil: 'SM' },
-    { NSPT: 15, typeSoil: 'SM' },
-    { NSPT: 16, typeSoil: 'SM' },
-    { NSPT: 15, typeSoil: 'SM' },
-    { NSPT: 17, typeSoil: 'SM' },
-    { NSPT: 19, typeSoil: 'SM' },
-    { NSPT: 21, typeSoil: 'SM' },
-    { NSPT: 23, typeSoil: 'SM' },
-    { NSPT: 6, typeSoil: 'CM' },
-    { NSPT: 6, typeSoil: 'CM' },
-    { NSPT: 9, typeSoil: 'CM' },
-    { NSPT: 10, typeSoil: 'CM' },
-    { NSPT: 5, typeSoil: 'CM' },
-    { NSPT: 6, typeSoil: 'CM' },
-    { NSPT: 5, typeSoil: 'CM' },
-    { NSPT: 5, typeSoil: 'CM' },
-    { NSPT: 4, typeSoil: 'CM' }
-], {
-    inicialQuota: 1,
-    waterLevel: 1,
-});
-const soilParams = await SoilParams.create(mySPT, {
-    author: 2
-});
-const myStake = await StakeParams.create({
-    numberAuthor: 3,
-    numberType: 9
-});
-const stakeSection = new CircularStake({
-    diameter: 0.3,
-    height: 4,
-    inicialQuota: 1
-});
-const mySoilResistence = new SoilResistence(stakeSection, soilParams, myStake);
-console.log(mySoilResistence);

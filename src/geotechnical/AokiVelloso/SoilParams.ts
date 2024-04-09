@@ -1,6 +1,9 @@
 import SPT from "../geotechnicalTests/SPT.js";
 import { ISoilLayer, IParamsSoilJSON, ISoilParams, ISPT } from 'interface/IAokiVelloso.js';
-import { JsonReader } from '../utils/JsonReader.js';
+import { JsonReader } from '../../utils/JsonReader.js';
+import PathsProject from "../../utils/PathsProject.js";
+import path from 'path';
+
 
 enum optionAuthorSoilParams {
   'originals' = 1,
@@ -31,10 +34,6 @@ export class SoilParams {
       selectedAuthorSoilParams: author
     }
       SPT._soilLayers.forEach((element, index) => {
-
-        const typeSoil = SPT._soilLayers[index].typeSoil
-        let kavLayer, alfaavLayer
-
         const {kav, alfaav} = this.setKav_alfaavLayer(SPT, index, author)
         
         this._LayersProps.push({
@@ -60,7 +59,7 @@ export class SoilParams {
   }
 
   static async readFile() {
-    this._paramsSoil = await JsonReader.readFileAsync('./src/json/AokiVelloso/soil.json')
+    this._paramsSoil = await JsonReader.readFileAsync(path.join(PathsProject.PathToJsonFolder(), 'AokiVelloso', 'soil.json'))
   }
 
   static async initialize() {

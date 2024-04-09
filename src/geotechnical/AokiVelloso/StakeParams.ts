@@ -1,5 +1,7 @@
 import { IParamsStake, IParamsStakeJSON, IValidNumbersStake } from "interface/IAokiVelloso.js"
-import { JsonReader } from "../utils/JsonReader.js"
+import { JsonReader } from "../../utils/JsonReader.js"
+import PathsProject from "../../utils/PathsProject.js"
+import path from "path"
 
 enum ItypeStake {
   'Frank de fuste apiloado' = 1,
@@ -51,7 +53,7 @@ export class StakeParams {
   }
 
   static async readFile() {
-    !this._paramsAllStakes ? this._paramsAllStakes = await JsonReader.readFileAsync('./src/json/AokiVelloso/stake.json') : ''
+    !this._paramsAllStakes ? this._paramsAllStakes = await JsonReader.readFileAsync(path.join(PathsProject.PathToJsonFolder(), 'AokiVelloso', 'stake.json')) : ''
   }
 
   static async initialize() {
