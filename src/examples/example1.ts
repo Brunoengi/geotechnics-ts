@@ -3,7 +3,7 @@ import { SoilParams } from "../geotechnical/AokiVelloso/SoilParams.js"
 import { StakeParams } from "../geotechnical/AokiVelloso/StakeParams.js"
 import { CircularStake } from "../geotechnical/stake/CircularStake.js"
 import { SoilResistence } from "../geotechnical/AokiVelloso/SoilResistence.js"
-import PathsProject from "../utils/PathsProject.js"
+
 
 const mySPT = new SPT([
   {NSPT: 12, typeSoil: 'SM'},
