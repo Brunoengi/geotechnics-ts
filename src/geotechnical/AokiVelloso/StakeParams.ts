@@ -28,7 +28,7 @@ export class StakeParams {
   _author: AuthorStakeType
   _selectedNumberStake: IValidNumbersStake['numbers']
 
-  constructor({numberType, numberAuthor}: IParamsStake) {
+  private constructor({numberType, numberAuthor}: IParamsStake) {
       this._author = numberAuthor;
       this._selectedNumberStake = numberType;
       this._nameStake = this.getItypeStakeFromNumber(numberType);  
