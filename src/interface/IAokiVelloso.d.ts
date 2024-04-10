@@ -1,5 +1,3 @@
-import SoilResistenceSPT from "..SoilResistence.ts"
-
 export interface ISoilLayer {
   NSPT: number
   typeSoil: 'S' | 'SM' | 'SMC' | 'SC' | 'SCM' | 'M' | 'MS' | 'MSC' | 'MC' | 'MCS' | 'C' | 'CS' | 'CSM' | 'CM' | 'CMS' 
@@ -52,11 +50,9 @@ export interface IParamsStake {
     numberAuthor: originals | Laprovitera_Benegas | Monteiro
 }
 
-
 export interface IValidNumbersStake {
   numbers: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
 }
-
 
 export interface ISPT {
   soilLayers: ISoilLayer[]
@@ -66,4 +62,11 @@ export interface ISPT {
   }
 }
 
+export interface ICPT {
+  layers: {
+    qc: number,
+    quota: number
+  }[],
+  inicialQuota: number
+}
 
