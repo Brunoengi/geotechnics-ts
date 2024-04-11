@@ -57,7 +57,7 @@
 ```
 
 <p>
-<b>dist:</b> Folder of files compiled for javascript in the same structure as the src folder. <br>
+<b>dist:</b> Folder of files compiled for javascript in the same structure as the src folder. </br></br>
 <b>src:</b> Main project development folder developed with typescript, includes the examples folder that are presented in this documentation, geotechnical folder, interface, json file that includes information on current standards, utility folder with classes to access json files and class directing the paths from the project.
 </p>
 
@@ -67,7 +67,7 @@
 
 <h3>Example 1:</h3>
 
-<p>In this example, our objective is calculate the soil resistence to deep foundations based in SPT - Standard Penetration Test with a continuous flight auger (CFA) pile</p>
+<p>In this example, our objective is calculate the soil resistence to deep foundations based in SPT - Standard Penetration Test with a continuous flight auger (CFA) pile.</p>
 
 <p>The first stap is create a instace about SPT, in this case we use this data:</p>
 
@@ -151,17 +151,17 @@ const stakeSection = new CircularStake({
 })
 ```
 
-<p>The final step is create a class to calculate the soil resistence, the intance receives 3 parameters, the first is the stake section, the second is the soil parameters and the thrst is the stake properties that includes lateral resistance and base resistance</p>
+<p>The final step is create a class to calculate the soil resistence, the intance receives 3 parameters, the first is the stake section, the second is the soil parameters and the thrst is the stake properties that includes lateral resistance and base resistance.</p>
 
 ```
 const mySoilResistence = new SoilResistence(stakeSection, soilParams, myStake)
 ```
 
-<p>Now, you can use de properties of class SoilResistence.</p>
+<p>Now, you can use properties that include lateral resistance based on distance from the SPT or CPT test and base resistance. </p>
 
 <h2 id='authors'>5. Authors</h2>
 
-<h4>Desenvolvedor: Eng. Bruno Teixeira Santos</h4>
+<h4>Developer: Eng. Bruno Teixeira Santos</h4>
 <p>Redes Sociais:</p>
 <a href="https://github.com/Brunoengi">Github:</a> <br>
 <a href="https://www.linkedin.com/in/bruno--teixeira/">Linkedin:</a> <br>
