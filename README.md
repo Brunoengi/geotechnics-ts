@@ -1,17 +1,67 @@
 <h1>Geotechnics</h1>
 
-<p>This repository aims to automate geotechnical tests to obtain soil parameters and dimensioning of foundations according to NBR-6122, NBR 12069 and NBR 6484 <p>
+<p>This repository aims to automate geotechnical tests to obtain soil parameters and dimensioning of foundations according to NBR-6122, NBR-12069 and NBR-6484. <p>
 
 <h2>Sumary:</h2>
 <p>
   <ol>
-    <li>Geotchnical referece</li>
-    <li>File System</li>
-    <li>Examples</li>
+    <li><a href='#able-to-do'>What are you able to do</a></li>
+    <li><a href='#geotchnical-reference'>Geotchnical Reference</a></li>
+    <li><a href='#file-system'>File System</a></li>
+    <li><a href='#examples'>Examples</a></li>
+    <li><a href='#authors'>Authors</a></li>
   </ol>
 </p>
 
-<h2>Examples</h2>
+<h2 id='able-to-do'>1. What are you able to do</h2>
+
+<p>The following geotechnical tests have already been automated:</p>
+
+
+| Geotechnical Tests              | 
+| :---:                           | 
+| SPT - Standard Penetration Test | 
+| CPT - Cone Penetration Test     | 
+
+
+<p>With this tests, you can calculate the soil resistence to deep fundations, you can calculate the side resistence and base resistence based based on Aoki Velloso's method with contribuitions from Danziger e Velloso (1986), Monteiro (1997), Laprovitera (1988) and Benegas (1993).</p>
+
+| Method to calculate soil resistence| 
+| :---:            | 
+| Aoki and Velloso |
+
+<p>Furthermore, there are classes in the application to calculate the geometric properties of foundations, so far only solid foundations but soon we will have hollow foundation projects.</p>
+
+| Stake geometric properties| 
+| :---:               | 
+| Circular - Solid    |
+| Rectangular - Solid |
+
+<h2 id='geotchnical-reference'>2. Geotechnical Reference</a></h2>
+
+<h2 id='file-system'>3. File System</h2>
+
+```
+├── dist
+│ ├── ...
+├── src
+│ ├── examples
+│ | ├── example1.ts
+│ ├── geotechnical
+│ ├── interface
+│ ├── json
+│ └── utils
+├── README.md
+├── LICENCE.md
+├── tsconfig.json
+```
+
+<p>
+<b>dist:</b> Folder of files compiled for javascript in the same structure as the src folder. <br>
+<b>src:</b> Main project development folder developed with typescript, includes the examples folder that are presented in this documentation, geotechnical folder, interface, json file that includes information on current standards, utility folder with classes to access json files and class directing the paths from the project.
+</p>
+
+<h2 id='examples'>4. Examples</h2>
 
 <p>All examples are in the project, in other words, the final archive can be acessed in project.</p>
 
@@ -101,7 +151,7 @@ const stakeSection = new CircularStake({
 })
 ```
 
-<p>The final step is create a class to calculate the soil resistence, the intance receives 3 parameters, the first is the stake section, the second is the soil parameters and the thrst is the stake properties.</p>
+<p>The final step is create a class to calculate the soil resistence, the intance receives 3 parameters, the first is the stake section, the second is the soil parameters and the thrst is the stake properties that includes lateral resistance and base resistance</p>
 
 ```
 const mySoilResistence = new SoilResistence(stakeSection, soilParams, myStake)
@@ -109,3 +159,12 @@ const mySoilResistence = new SoilResistence(stakeSection, soilParams, myStake)
 
 <p>Now, you can use de properties of class SoilResistence.</p>
 
+<h2 id='authors'>5. Authors</h2>
+
+<h4>Desenvolvedor: Eng. Bruno Teixeira Santos</h4>
+<p>Redes Sociais:</p>
+<a href="https://github.com/Brunoengi">Github:</a> <br>
+<a href="https://www.linkedin.com/in/bruno--teixeira/">Linkedin:</a> <br>
+<a href="https://www.instagram.com/b.de_bruno/">Instagram:</a> <br>
+<a href="https://www.youtube.com/channel/UCini8PeSegCCvsCuzZCfKKA">Youtube:</a> <br>
+</p>
