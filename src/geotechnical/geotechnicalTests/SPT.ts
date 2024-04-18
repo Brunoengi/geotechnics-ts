@@ -8,11 +8,11 @@ export default class SPT {
     waterLevel: number
   }
   
-  constructor(soilLayers: ISPT['soilLayers'], { inicialQuota, waterLevel }: ISPT['config']) {
+  constructor(_soilLayers: ISPT['soilLayers'], { inicialQuota, waterLevel }: ISPT['config']) {
 
-    this.addHeightForEachLayer(soilLayers, inicialQuota)
+    this.addHeightForEachLayer(_soilLayers, inicialQuota)
     
-    this._soilLayers = soilLayers
+    this._soilLayers = _soilLayers
     this._config = {
       waterLevel: waterLevel,
       inicialQuota: inicialQuota
