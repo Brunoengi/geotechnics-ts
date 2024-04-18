@@ -14,19 +14,19 @@ export class SoilParams {
         this._config = {
             selectedAuthorSoilParams: author
         };
-        SPT._soilLayers.forEach((element, index) => {
+        SPT.soilLayers.forEach((element, index) => {
             const { kav, alfaav } = this.setKav_alfaavLayer(SPT, index, author);
             this._LayersProps.push({
-                NSPT: SPT._soilLayers[index].NSPT,
-                quota: SPT._soilLayers[index].quota,
-                typeSoil: SPT._soilLayers[index].typeSoil,
+                NSPT: SPT.soilLayers[index].NSPT,
+                quota: SPT.soilLayers[index].quota,
+                typeSoil: SPT.soilLayers[index].typeSoil,
                 kav: kav,
                 alfaav: alfaav
             });
         });
     }
     setKav_alfaavLayer(SPT, index, autor) {
-        const { alfaav, kav } = this.getKav_alfaavLayer(SPT._soilLayers[index].typeSoil, autor);
+        const { alfaav, kav } = this.getKav_alfaavLayer(SPT.soilLayers[index].typeSoil, autor);
         return {
             kav, alfaav
         };
@@ -43,7 +43,7 @@ export class SoilParams {
     }
     static async create(SPTI, { author }) {
         await this.initialize();
-        const mySPT = new SPT(SPTI.soilLayer, SPTI.config);
+        const mySPT = new SPT(SPTI.soilLayers, SPTI.config);
         const instance = new SoilParams(mySPT, { author });
         return instance;
     }

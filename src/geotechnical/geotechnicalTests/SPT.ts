@@ -2,24 +2,16 @@ import { ISoilLayer, ISPT } from "interface/IAokiVelloso.js"
 
 export default class SPT {
 
-  _soilLayers: ISoilLayer[]
-  _config: {
-    inicialQuota: number
-    waterLevel: number
-  }
+
   
-  constructor(_soilLayers: ISPT['soilLayers'], { inicialQuota, waterLevel }: ISPT['config']) {
+  constructor( private _soilLayers: ISPT['soilLayers'],  private _config: ISPT['config']) {
+    const { inicialQuota, waterLevel } = _config
 
     this.addHeightForEachLayer(_soilLayers, inicialQuota)
-    
     this._soilLayers = _soilLayers
-    this._config = {
-      waterLevel: waterLevel,
-      inicialQuota: inicialQuota
-    } 
   }
 
-  get soilLayer(){
+  get soilLayers(){
     return this._soilLayers
   }
 

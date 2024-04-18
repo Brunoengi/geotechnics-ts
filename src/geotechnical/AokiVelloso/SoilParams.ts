@@ -14,9 +14,9 @@ enum optionAuthorSoilParams {
 export class SoilParams {
 
   _LayersProps: {
-    NSPT: SPT['_soilLayers'][0]['NSPT']
-    quota: SPT['_soilLayers'][0]['quota']
-    typeSoil: SPT['_soilLayers'][0]['typeSoil']
+    NSPT: SPT['soilLayers'][0]['NSPT']
+    quota: SPT['soilLayers'][0]['quota']
+    typeSoil: SPT['soilLayers'][0]['typeSoil']
     kav: IParamsSoilJSON[0]['originals']['kav']
     alfaav: IParamsSoilJSON[0]['originals']['alfaav']
   }[]
@@ -33,13 +33,13 @@ export class SoilParams {
     this._config = {
       selectedAuthorSoilParams: author
     }
-      SPT._soilLayers.forEach((element, index) => {
+      SPT.soilLayers.forEach((element, index) => {
         const {kav, alfaav} = this.setKav_alfaavLayer(SPT, index, author)
         
         this._LayersProps.push({
-          NSPT: SPT._soilLayers[index].NSPT,
-          quota: SPT._soilLayers[index].quota,
-          typeSoil: SPT._soilLayers[index].typeSoil,
+          NSPT: SPT.soilLayers[index].NSPT,
+          quota: SPT.soilLayers[index].quota,
+          typeSoil: SPT.soilLayers[index].typeSoil,
           kav: kav,
           alfaav: alfaav        
         })
@@ -47,7 +47,7 @@ export class SoilParams {
     }
     
   setKav_alfaavLayer(SPT: SPT, index: number, autor: ISoilParams['config']['author']) {
-    const {alfaav, kav} =  this.getKav_alfaavLayer(SPT._soilLayers[index].typeSoil, autor)
+    const {alfaav, kav} =  this.getKav_alfaavLayer(SPT.soilLayers[index].typeSoil, autor)
     return {
       kav, alfaav
     }
@@ -68,7 +68,7 @@ export class SoilParams {
 
   static async create(SPTI: SPT, {author}: ISoilParams['config']){
     await this.initialize()
-    const mySPT = new SPT(SPTI.soilLayer, SPTI.config)
+    const mySPT = new SPT(SPTI.soilLayers, SPTI.config)
     const instance = new SoilParams(mySPT, 
       {author}
       )

@@ -1,13 +1,12 @@
 export default class SPT {
-    constructor(soilLayers, { inicialQuota, waterLevel }) {
-        this.addHeightForEachLayer(soilLayers, inicialQuota);
-        this._soilLayers = soilLayers;
-        this._config = {
-            waterLevel: waterLevel,
-            inicialQuota: inicialQuota
-        };
+    constructor(_soilLayers, _config) {
+        this._soilLayers = _soilLayers;
+        this._config = _config;
+        const { inicialQuota, waterLevel } = _config;
+        this.addHeightForEachLayer(_soilLayers, inicialQuota);
+        this._soilLayers = _soilLayers;
     }
-    get soilLayer() {
+    get soilLayers() {
         return this._soilLayers;
     }
     get config() {
