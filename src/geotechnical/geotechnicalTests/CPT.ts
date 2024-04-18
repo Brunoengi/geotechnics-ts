@@ -3,15 +3,7 @@ import { ICPT, ISoilLayer } from "interface/IAokiVelloso.js";
 
 export default class CPT {
 
-  _soilLayers: ICPT
-  _config: {
-    inicialQuota: number
-    waterLevel: number
-  }
-
-  constructor( { layers, inicialQuota } : ICPT) {
-
-  }
+  constructor( private _layers: ICPT['inicialQuota'], private _inicialQuota: ICPT['inicialQuota'] ) {}
   
   addHeightForEachLayer(layers: ICPT['layers'], inicialQuota: ICPT['inicialQuota']) {
     const deltayCPT = 0.2

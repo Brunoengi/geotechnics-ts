@@ -1,5 +1,7 @@
 export default class CPT {
-    constructor({ layers, inicialQuota }) {
+    constructor(_layers, _inicialQuota) {
+        this._layers = _layers;
+        this._inicialQuota = _inicialQuota;
     }
     addHeightForEachLayer(layers, inicialQuota) {
         const deltayCPT = 0.2;

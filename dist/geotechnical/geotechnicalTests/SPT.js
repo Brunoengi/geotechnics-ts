@@ -2,9 +2,8 @@ export default class SPT {
     constructor(_soilLayers, _config) {
         this._soilLayers = _soilLayers;
         this._config = _config;
-        const { inicialQuota, waterLevel } = _config;
+        const { inicialQuota } = _config;
         this.addHeightForEachLayer(_soilLayers, inicialQuota);
-        this._soilLayers = _soilLayers;
     }
     get soilLayers() {
         return this._soilLayers;
@@ -18,7 +17,7 @@ export default class SPT {
         });
     }
     getSPTLayer(quote) {
-        return this._soilLayers[Math.floor(quote) - 1].NSPT;
+        return this.soilLayers[Math.floor(quote) - 1].NSPT;
     }
 }
 const reportSPT = new SPT([
