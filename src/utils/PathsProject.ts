@@ -1,18 +1,16 @@
-import { fileURLToPath } from 'url';
-import path from 'path';
+import { fileURLToPath } from 'url'
+import path from 'path'
 
-export default class PathsProject {
-  static PathToOutDir() {
-    const __filename = fileURLToPath(import.meta.url);
-    return path.dirname(path.dirname(__filename));
-  }
+export function PathToOutDir (): string {
+  const filename = fileURLToPath(import.meta.url)
+  return path.dirname(path.dirname(filename))
+}
 
-  static PathToDirectory() {
-    return path.dirname(PathsProject.PathToOutDir())
-  }
+export function PathToDirectory (): string {
+  return path.dirname(PathToOutDir())
+}
 
-  static PathToJsonFolder(){
-    const directoryPath = PathsProject.PathToDirectory()
-    return path.join(directoryPath, 'src', 'json')
-  }
+export default function PathToJsonFolder (): string {
+  const directoryPath = PathToDirectory()
+  return path.join(directoryPath, 'src', 'json')
 }
