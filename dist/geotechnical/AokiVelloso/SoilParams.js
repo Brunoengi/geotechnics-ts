@@ -1,7 +1,7 @@
-import SPT from "../geotechnicalTests/SPT.js";
+import SPT from '../geotechnicalTests/SPT.js';
 import { JsonReader } from '../../utils/JsonReader.js';
 import path from 'path';
-import PathToJsonFolder from "../../utils/PathsProject.js";
+import PathToJsonFolder from '../../utils/PathsProject.js';
 var optionAuthorSoilParams;
 (function (optionAuthorSoilParams) {
     optionAuthorSoilParams[optionAuthorSoilParams["originals"] = 1] = "originals";
@@ -9,7 +9,8 @@ var optionAuthorSoilParams;
     optionAuthorSoilParams[optionAuthorSoilParams["Monteiro"] = 3] = "Monteiro";
 })(optionAuthorSoilParams || (optionAuthorSoilParams = {}));
 export class SoilParams {
-    constructor(SPT, { author }) {
+    constructor(SPT, config) {
+        const author = config.author;
         this._LayersProps = [];
         this._config = {
             selectedAuthorSoilParams: author
@@ -20,8 +21,8 @@ export class SoilParams {
                 NSPT: SPT.soilLayers[index].NSPT,
                 quota: SPT.soilLayers[index].quota,
                 typeSoil: SPT.soilLayers[index].typeSoil,
-                kav: kav,
-                alfaav: alfaav
+                kav,
+                alfaav
             });
         });
     }
