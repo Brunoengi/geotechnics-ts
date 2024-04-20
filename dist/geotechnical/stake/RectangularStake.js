@@ -1,4 +1,4 @@
-import { AbstractStake } from "./abstractStake.js";
+import { AbstractStake } from './abstractStake.js';
 export class RectangularStake extends AbstractStake {
     constructor({ inicialQuota, side, height }) {
         super({ inicialQuota, height });
