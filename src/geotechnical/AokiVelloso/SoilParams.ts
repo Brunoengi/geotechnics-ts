@@ -1,8 +1,8 @@
 import SPT from "../geotechnicalTests/SPT.js";
 import { ISoilLayer, IParamsSoilJSON, ISoilParams, ISPT } from 'interface/IAokiVelloso.js';
 import { JsonReader } from '../../utils/JsonReader.js';
-import PathsProject from "../../utils/PathsProject.js";
 import path from 'path';
+import PathToJsonFolder from "../../utils/PathsProject.js";
 
 
 enum optionAuthorSoilParams {
@@ -59,7 +59,7 @@ export class SoilParams {
   }
 
   static async readFile() {
-    this._paramsSoil = await JsonReader.readFileAsync(path.join(PathsProject.PathToJsonFolder(), 'AokiVelloso', 'soil.json'))
+    this._paramsSoil = await JsonReader.readFileAsync(path.join(PathToJsonFolder(), 'AokiVelloso', 'soil.json'))
   }
 
   static async initialize() {

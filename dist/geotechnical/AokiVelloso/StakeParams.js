@@ -1,6 +1,6 @@
 import { JsonReader } from "../../utils/JsonReader.js";
-import PathsProject from "../../utils/PathsProject.js";
 import path from "path";
+import PathToJsonFolder from "../../utils/PathsProject.js";
 var ItypeStake;
 (function (ItypeStake) {
     ItypeStake[ItypeStake["Frank de fuste apiloado"] = 1] = "Frank de fuste apiloado";
@@ -38,7 +38,7 @@ export class StakeParams {
         return this._myParamStake;
     }
     static async readFile() {
-        !this._paramsAllStakes ? this._paramsAllStakes = await JsonReader.readFileAsync(path.join(PathsProject.PathToJsonFolder(), 'AokiVelloso', 'stake.json')) : '';
+        !this._paramsAllStakes ? this._paramsAllStakes = await JsonReader.readFileAsync(path.join(PathToJsonFolder(), 'AokiVelloso', 'stake.json')) : '';
     }
     static async initialize() {
         await StakeParams.readFile();

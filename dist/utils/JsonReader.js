@@ -1,4 +1,4 @@
-import { promises as fs } from 'fs';
+import * as fs from 'node:fs/promises';
 export class JsonReader {
     static async readFileAsync(filePath) {
         return JSON.parse(await fs.readFile(filePath, 'utf8'));
