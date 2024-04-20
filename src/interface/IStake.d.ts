@@ -10,4 +10,3 @@ export interface ICircularStake extends IAbstractStake {
 export interface IRectangularStake extends IAbstractStake {
   side: number
 }
-

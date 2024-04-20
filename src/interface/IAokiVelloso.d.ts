@@ -1,25 +1,21 @@
 export interface ISoilLayer {
   NSPT: number
-  typeSoil: 'S' | 'SM' | 'SMC' | 'SC' | 'SCM' | 'M' | 'MS' | 'MSC' | 'MC' | 'MCS' | 'C' | 'CS' | 'CSM' | 'CM' | 'CMS' 
+  typeSoil: 'S' | 'SM' | 'SMC' | 'SC' | 'SCM' | 'M' | 'MS' | 'MSC' | 'MC' | 'MCS' | 'C' | 'CS' | 'CSM' | 'CM' | 'CMS'
   quota?: undefined | number
 }
 
-export interface IParamsSoilJSON {
-  [key: string]: {
-    originals: {
-      kav: number;
-      alfaav: number;
-    };
-    Danziger_Velloso_Laprovitera: {
-      kav: number;
-      alfaav: number;
-    };
-    Monteiro: {
-      kav: number;
-      alfaav: number;
-    };
-  };
+interface ISoilParamsVelloso {
+  kav: number
+  alfaav: number
 }
+
+interface ITypeParamsSoil {
+  originals: ISoilParamsVelloso
+  Danziger_Velloso_Laprovitera: ISoilParamsVelloso
+  Monteiro: ISoilParamsVelloso
+}
+
+export type IParamsSoilJSON = Record<string, ITypeParamsSoil >
 
 export interface ISoilParams {
   SPT: SPT
@@ -28,26 +24,22 @@ export interface ISoilParams {
   }
 }
 
-export interface IParamsStakeJSON {
-  [key: string]: {
-    originals: {
-      F1: number | null;
-      F2: number | null;
-    };
-    Laprovitera_Benegas: {
-      F1: number | null;
-      F2: number | null;
-    };
-    Monteiro: {
-      F1: number | null;
-      F2: number | null;
-    };
-  };
+export type IParamsStakeJSON = Record<string, IAuthorStakeParamsVelloso>
+
+interface StakeParamsVelloso {
+  F1: number | null
+  F2: number | null
+}
+
+interface IAuthorStakeParamsVelloso {
+  originals: StakeParamsVelloso
+  Laprovitera_Benegas: StakeParamsVelloso
+  Monteiro: StakeParamsVelloso
 }
 
 export interface IParamsStake {
-    numberType: IValidNumbersStake['numbers']
-    numberAuthor: originals | Laprovitera_Benegas | Monteiro
+  numberType: IValidNumbersStake['numbers']
+  numberAuthor: originals | Laprovitera_Benegas | Monteiro
 }
 
 export interface IValidNumbersStake {
@@ -62,11 +54,12 @@ export interface ISPT {
   }
 }
 
-export interface ICPT {
-  layers: {
-    qc: number,
-    quota: number
-  }[],
-  inicialQuota: number
+interface layerCPT {
+  qc: number
+  quota: number
 }
 
+export interface ICPT {
+  layers: layerCPT[]
+  inicialQuota: number
+}

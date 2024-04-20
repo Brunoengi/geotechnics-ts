@@ -1,3 +1,3 @@
 export interface ITests<T> {
- addHeightForEachLayer(layer: T, quota: number): void
+  addHeightForEachLayer: (layer: T, quota: number) => void
 }
