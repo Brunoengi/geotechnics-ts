@@ -1,8 +1,8 @@
 export default class SPT {
     constructor(_soilLayers, _config) {
-        this._soilLayers = _soilLayers;
         this._config = _config;
         const { inicialQuota } = _config;
+        this._soilLayers = _soilLayers;
         this.addHeightForEachLayer(_soilLayers, inicialQuota);
     }
     get soilLayers() {
@@ -12,7 +12,7 @@ export default class SPT {
         return this._config;
     }
     addHeightForEachLayer(soilLayers, inicialQuota) {
-        soilLayers.forEach((oneLayer, index) => {
+        this._soilLayers.forEach((oneLayer, index) => {
             oneLayer.quota = inicialQuota + index;
         });
     }

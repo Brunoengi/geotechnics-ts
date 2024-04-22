@@ -1,7 +1,10 @@
-export interface ISoilLayer {
+export interface ISoilLayerWithoutQuota {
   NSPT: number
   typeSoil: 'S' | 'SM' | 'SMC' | 'SC' | 'SCM' | 'M' | 'MS' | 'MSC' | 'MC' | 'MCS' | 'C' | 'CS' | 'CSM' | 'CM' | 'CMS'
-  quota?: undefined | number
+}
+
+export interface ISoilLayer extends ISoilLayerWithoutQuota {
+  quota: number
 }
 
 interface ISoilParamsVelloso {
@@ -46,12 +49,16 @@ export interface IValidNumbersStake {
   numbers: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
 }
 
-export interface ISPT {
-  soilLayers: ISoilLayer[]
+export interface ISPTWithoutQuota {
+  soilLayers: ISoilLayerWithoutQuota[]
   config: {
     inicialQuota: number
     waterLevel: number
   }
+}
+
+export interface ISPT extends ISPTWithoutQuota {
+  soilLayers: ISoilLayer[]
 }
 
 interface layerCPT {

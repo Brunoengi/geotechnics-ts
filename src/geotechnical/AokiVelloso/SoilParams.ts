@@ -1,5 +1,5 @@
 import SPT from '../geotechnicalTests/SPT.js'
-import { type ISoilLayer, type IParamsSoilJSON, type ISoilParams, type ISoilParamsVelloso } from 'interface/IAokiVelloso.js'
+import { type ISoilLayerWithoutQuota, type IParamsSoilJSON, type ISoilParams, type ISoilParamsVelloso, type ISoilLayer } from 'interface/IAokiVelloso.js'
 import { JsonReader } from '../../utils/JsonReader.js'
 import path from 'path'
 import PathToJsonFolder from '../../utils/PathsProject.js'
@@ -51,7 +51,7 @@ export class SoilParams {
     }
   }
 
-  getKav_alfaavLayer (typeSoil: ISoilLayer['typeSoil'], selectedAuthorSoilParams: optionAuthorSoilParams): ISoilParamsVelloso {
+  getKav_alfaavLayer (typeSoil: ISoilLayerWithoutQuota['typeSoil'], selectedAuthorSoilParams: optionAuthorSoilParams): ISoilParamsVelloso {
     const selectedOption = optionAuthorSoilParams[selectedAuthorSoilParams]
     return SoilParams._paramsSoil[typeSoil as keyof IParamsSoilJSON][selectedOption as keyof typeof optionAuthorSoilParams]
   }
