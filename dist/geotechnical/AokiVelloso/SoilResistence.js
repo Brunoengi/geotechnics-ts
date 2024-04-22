@@ -18,8 +18,8 @@ export class SoilResistence {
         const resistenceBase = this.calculateBaseResistence(params.kav, this.calculateNbar(params.depthStake), params.F1, params.baseArea);
         this.setBaseResistence(resistenceBase);
         const allSideResistence = [];
-        this._soilParams._LayersProps.map((layer, index) => {
-            const { NSPT, alfaav, kav, quota, typeSoil } = layer;
+        this._soilParams._LayersProps.forEach((layer, index) => {
+            const { NSPT, alfaav, kav } = layer;
             allSideResistence.push(this.sideResistence(alfaav, kav, NSPT, params.F2, params.perimeter));
         });
         this._resistence.allSideResistence = allSideResistence;
@@ -42,6 +42,7 @@ export class SoilResistence {
     setBaseResistence(value) {
         this._resistence.baseResistence = value;
     }
+    // Verify this function when deltaL =! 1, not SPT
     sideResistence(alfaav, kav, NSPT, F2, perimeter, deltaL = 1) {
         console.log({ alfaav, kav, NSPT, F2, perimeter, deltaL });
         const valor = (alfaav * kav * NSPT * perimeter * deltaL) / (100 * F2);
@@ -51,7 +52,10 @@ export class SoilResistence {
         const quotaToCalculateNbar = [Math.floor(depthStake) - 1, Math.floor(depthStake), Math.floor(depthStake) + 1];
         const layersToNBar = [];
         quotaToCalculateNbar.forEach((quota) => {
-            const findQuote = this._soilParams._LayersProps.find((element) => element.quota == quota);
+            const findQuote = this._soilParams._LayersProps.find((element) => element.quota === quota);
+            if (findQuote === undefined) {
+                throw new Error('Quote is not defined');
+            }
             layersToNBar.push(findQuote);
         });
         const SPTLayer = [layersToNBar[0].NSPT, layersToNBar[1].NSPT, layersToNBar[2].NSPT];

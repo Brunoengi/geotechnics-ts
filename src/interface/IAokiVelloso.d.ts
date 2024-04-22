@@ -30,8 +30,8 @@ export interface ISoilParams {
 export type IParamsStakeJSON = Record<string, IAuthorStakeParamsVelloso>
 
 interface StakeParamsVelloso {
-  F1: number | null
-  F2: number | null
+  F1: number
+  F2: number
 }
 
 interface IAuthorStakeParamsVelloso {
