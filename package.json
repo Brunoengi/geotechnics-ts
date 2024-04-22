@@ -10,10 +10,6 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "@types/node": "^20.11.30",
-    "dotenv": "^16.4.5"
-  },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "eslint": "^8.57.0",
@@ -22,5 +18,8 @@
     "eslint-plugin-n": "^16.6.2",
     "eslint-plugin-promise": "^6.1.1",
     "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "@types/node": "^20.12.7"
   }
 }
