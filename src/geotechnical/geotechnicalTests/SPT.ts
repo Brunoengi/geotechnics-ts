@@ -1,4 +1,4 @@
-import { type ISPT, type ISPTWithoutQuota, type ISoilLayer } from 'interface/IAokiVelloso.js'
+import { type ISoilLayerWithoutQuota, type ISPT, type ISPTWithoutQuota } from 'interface/IAokiVelloso.js'
 
 export default class SPT {
   _soilLayers: ISPT['soilLayers']
@@ -7,7 +7,7 @@ export default class SPT {
     const { inicialQuota } = _config
 
     this._soilLayers = _soilLayers as ISPT['soilLayers']
-    this.addHeightForEachLayer(_soilLayers as ISPT['soilLayers'], inicialQuota)
+    this.addHeightForEachLayer(_soilLayers, inicialQuota)
   }
 
   get soilLayers (): ISPT['soilLayers'] {
@@ -18,9 +18,9 @@ export default class SPT {
     return this._config
   }
 
-  private addHeightForEachLayer (soilLayers: ISoilLayer[], inicialQuota: number): void {
-    this._soilLayers.forEach((oneLayer, index) => {
-      oneLayer.quota = inicialQuota + index
+  private addHeightForEachLayer (soilLayers: ISoilLayerWithoutQuota[], inicialQuota: number): void {
+    soilLayers.forEach((oneLayer, index) => {
+      this._soilLayers[index].quota = inicialQuota + index
     })
   }
 

@@ -12,8 +12,8 @@ export default class SPT {
         return this._config;
     }
     addHeightForEachLayer(soilLayers, inicialQuota) {
-        this._soilLayers.forEach((oneLayer, index) => {
-            oneLayer.quota = inicialQuota + index;
+        soilLayers.forEach((oneLayer, index) => {
+            this._soilLayers[index].quota = inicialQuota + index;
         });
     }
     getSPTLayer(quote) {
