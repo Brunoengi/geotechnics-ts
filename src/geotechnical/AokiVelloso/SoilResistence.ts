@@ -1,3 +1,4 @@
+import { type ISoilResistenceAll } from 'interface/IAokiVelloso.js'
 import { type AbstractStake } from '../stake/abstractStake.js'
 import { type SoilParams } from './SoilParams.js'
 import { type StakeParams } from './StakeParams.js'
@@ -7,13 +8,7 @@ export class SoilResistence {
   _soilParams: SoilParams
   _stakeParams: StakeParams
 
-  _resistence: {
-    allBaseResistence: number[]
-    allSideResistence: number[]
-    allSumSideResistence: number[]
-    baseResistence: number
-    sumSideResistence: number
-  }
+  _resistence: ISoilResistenceAll
 
   constructor (stakeSection: AbstractStake, soilParams: SoilParams, stakeParams: StakeParams) {
     this._stake = stakeSection

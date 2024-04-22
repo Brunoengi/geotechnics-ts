@@ -1,24 +1,7 @@
 import { JsonReader } from '../../utils/JsonReader.js';
 import path from 'path';
 import PathToJsonFolder from '../../utils/PathsProject.js';
-var ItypeStake;
-(function (ItypeStake) {
-    ItypeStake[ItypeStake["Frank de fuste apiloado"] = 1] = "Frank de fuste apiloado";
-    ItypeStake[ItypeStake["Frank de fuste vibrado"] = 2] = "Frank de fuste vibrado";
-    ItypeStake[ItypeStake["Met\u00E1lica"] = 3] = "Met\u00E1lica";
-    ItypeStake[ItypeStake["Pr\u00E9-moldada de concreto cravada a percuss\u00E3o"] = 4] = "Pr\u00E9-moldada de concreto cravada a percuss\u00E3o";
-    ItypeStake[ItypeStake["Pr\u00E9-moldada de concreto cravada por prenagem"] = 5] = "Pr\u00E9-moldada de concreto cravada por prenagem";
-    ItypeStake[ItypeStake["Escavada"] = 6] = "Escavada";
-    ItypeStake[ItypeStake["Strauss"] = 7] = "Strauss";
-    ItypeStake[ItypeStake["Raiz"] = 8] = "Raiz";
-    ItypeStake[ItypeStake["H\u00E9lice cont\u00EDnua"] = 9] = "H\u00E9lice cont\u00EDnua";
-})(ItypeStake || (ItypeStake = {}));
-var AuthorStakeType;
-(function (AuthorStakeType) {
-    AuthorStakeType[AuthorStakeType["originals"] = 1] = "originals";
-    AuthorStakeType[AuthorStakeType["Laprovitera_Benegas"] = 2] = "Laprovitera_Benegas";
-    AuthorStakeType[AuthorStakeType["Monteiro"] = 3] = "Monteiro";
-})(AuthorStakeType || (AuthorStakeType = {}));
+import { optionTypeStake, AuthorStakeType } from '../../enums/AokiVelloso.js';
 export class StakeParams {
     constructor({ numberType, numberAuthor }) {
         this._author = numberAuthor;
@@ -26,8 +9,8 @@ export class StakeParams {
         this._nameStake = this.getItypeStakeFromNumber(numberType);
     }
     getItypeStakeFromNumber(num) {
-        const keys = Object.keys(ItypeStake).filter(k => typeof ItypeStake[k] === 'number');
-        const value = keys.find(k => ItypeStake[k] === num);
+        const keys = Object.keys(optionTypeStake).filter(k => typeof optionTypeStake[k] === 'number');
+        const value = keys.find(k => optionTypeStake[k] === num);
         return value;
     }
     async getParamsF1F2() {

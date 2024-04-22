@@ -1,30 +1,13 @@
-import { type IParamsStake, type IParamsStakeJSON, type IValidNumbersStake } from 'interface/IAokiVelloso.js'
+import { type StakeParamsVelloso, type IParamsStake, type IParamsStakeJSON, type IValidNumbersStake } from 'interface/IAokiVelloso.js'
 import { JsonReader } from '../../utils/JsonReader.js'
 import path from 'path'
 import PathToJsonFolder from '../../utils/PathsProject.js'
-
-enum ItypeStake {
-  'Frank de fuste apiloado' = 1,
-  'Frank de fuste vibrado' = 2,
-  'Metálica' = 3,
-  'Pré-moldada de concreto cravada a percussão' = 4,
-  'Pré-moldada de concreto cravada por prenagem' = 5,
-  'Escavada' = 6,
-  'Strauss' = 7,
-  'Raiz' = 8,
-  'Hélice contínua' = 9
-}
-
-enum AuthorStakeType {
-  originals = 1,
-  Laprovitera_Benegas = 2,
-  Monteiro = 3
-}
+import { optionTypeStake, AuthorStakeType } from '../../enums/AokiVelloso.js'
 
 export class StakeParams {
   static _paramsAllStakes: IParamsStakeJSON
-  _nameStake: ItypeStake | undefined
-  _myParamStake: IParamsStakeJSON[1]['originals']
+  _nameStake: optionTypeStake | undefined
+  _myParamStake: StakeParamsVelloso
   _author: AuthorStakeType
   _selectedNumberStake: IValidNumbersStake['numbers']
 
@@ -34,13 +17,13 @@ export class StakeParams {
     this._nameStake = this.getItypeStakeFromNumber(numberType)
   }
 
-  getItypeStakeFromNumber (num: number): ItypeStake | undefined {
-    const keys: string[] = Object.keys(ItypeStake).filter(k => typeof ItypeStake[k as keyof typeof ItypeStake] === 'number')
-    const value: string | undefined = keys.find(k => ItypeStake[k as keyof typeof ItypeStake] === num)
-    return value as ItypeStake | undefined
+  getItypeStakeFromNumber (num: number): optionTypeStake | undefined {
+    const keys: string[] = Object.keys(optionTypeStake).filter(k => typeof optionTypeStake[k as keyof typeof optionTypeStake] === 'number')
+    const value: string | undefined = keys.find(k => optionTypeStake[k as keyof typeof optionTypeStake] === num)
+    return value as optionTypeStake | undefined
   }
 
-  async getParamsF1F2 (): Promise<IParamsStakeJSON[1]['originals']> {
+  async getParamsF1F2 (): Promise<StakeParamsVelloso> {
     const numberAuthor = this._author
     const selectedNumberStake = this._selectedNumberStake
     const authorMethod = AuthorStakeType[numberAuthor]

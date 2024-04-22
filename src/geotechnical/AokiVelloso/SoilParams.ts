@@ -1,24 +1,12 @@
 import SPT from '../geotechnicalTests/SPT.js'
-import { type ISoilLayerWithoutQuota, type IParamsSoilJSON, type ISoilParams, type ISoilParamsVelloso, type ISoilLayer } from 'interface/IAokiVelloso.js'
+import { type ILayerPorps, type ISoilLayerWithoutQuota, type IParamsSoilJSON, type ISoilParams, type ISoilParamsVelloso } from 'interface/IAokiVelloso.js'
 import { JsonReader } from '../../utils/JsonReader.js'
 import path from 'path'
 import PathToJsonFolder from '../../utils/PathsProject.js'
-
-enum optionAuthorSoilParams {
-  'originals' = 1,
-  'Danziger_Velloso_Laprovitera' = 2,
-  'Monteiro' = 3
-}
+import { optionAuthorSoilParams } from '../../enums/AokiVelloso.js'
 
 export class SoilParams {
-  _LayersProps: Array<{
-    NSPT: ISoilLayer['NSPT']
-    quota: ISoilLayer['quota']
-    typeSoil: ISoilLayer['typeSoil']
-    kav: ISoilParamsVelloso['kav']
-    alfaav: ISoilParamsVelloso['alfaav']
-  }>
-
+  _LayersProps: ILayerPorps[]
   _config: {
     selectedAuthorSoilParams: optionAuthorSoilParams
   }

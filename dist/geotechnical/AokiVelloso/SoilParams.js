@@ -2,12 +2,7 @@ import SPT from '../geotechnicalTests/SPT.js';
 import { JsonReader } from '../../utils/JsonReader.js';
 import path from 'path';
 import PathToJsonFolder from '../../utils/PathsProject.js';
-var optionAuthorSoilParams;
-(function (optionAuthorSoilParams) {
-    optionAuthorSoilParams[optionAuthorSoilParams["originals"] = 1] = "originals";
-    optionAuthorSoilParams[optionAuthorSoilParams["Danziger_Velloso_Laprovitera"] = 2] = "Danziger_Velloso_Laprovitera";
-    optionAuthorSoilParams[optionAuthorSoilParams["Monteiro"] = 3] = "Monteiro";
-})(optionAuthorSoilParams || (optionAuthorSoilParams = {}));
+import { optionAuthorSoilParams } from '../../enums/AokiVelloso.js';
 export class SoilParams {
     constructor(SPT, config) {
         const author = config.author;

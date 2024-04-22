@@ -70,3 +70,19 @@ export interface ICPT {
   layers: layerCPT[]
   inicialQuota: number
 }
+
+export interface ISoilResistenceAll {
+  allBaseResistence: number[]
+  allSideResistence: number[]
+  allSumSideResistence: number[]
+  baseResistence: number
+  sumSideResistence: number
+}
+
+export interface ILayerPorps {
+  NSPT: ISoilLayer['NSPT']
+  quota: ISoilLayer['quota']
+  typeSoil: ISoilLayer['typeSoil']
+  kav: ISoilParamsVelloso['kav']
+  alfaav: ISoilParamsVelloso['alfaav']
+}
