@@ -108,6 +108,7 @@
   },
   "include": [
     "src/**/*.ts",
-    ".eslintrc.json"
+    ".eslintrc.json",
+    "babel.config.js"
   ]
 }
