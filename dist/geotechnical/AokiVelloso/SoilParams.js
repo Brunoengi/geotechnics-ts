@@ -1,4 +1,4 @@
-import SPT from '../geotechnicalTests/SPT.js';
+import SPT from '../geotechnicalTests/SPT/SPT.js';
 import { JsonReader } from '../../utils/JsonReader.js';
 import path from 'path';
 import PathToJsonFolder from '../../utils/PathsProject.js';
