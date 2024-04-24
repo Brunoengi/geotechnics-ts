@@ -1,4 +1,4 @@
-import { AbstractStake } from './abstractStake.js'
+import { AbstractStake } from '../abstractStake.js'
 import { type ICircularStake } from 'interface/IStake.js'
 
 export class CircularStake extends AbstractStake {
