@@ -8,11 +8,12 @@ export class CircularStake extends AbstractStake {
   _height: number
   _diameter: number
 
-  constructor ({ inicialQuota, diameter, height }: ICircularStake) {
+  constructor ({ inicialQuota, diameter, height }: ICircularStake, isHollow = false) {
     super({ height, inicialQuota })
     this._diameter = diameter
     this._area = this.calculateBaseArea(diameter)
     this._perimeter = this.calculatePerimeter(diameter)
+    this._isHollow = isHollow
   }
 
   calculatePerimeter (diameter: number): number {

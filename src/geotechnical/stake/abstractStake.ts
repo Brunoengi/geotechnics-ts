@@ -1,11 +1,11 @@
 import { type IAbstractStake } from 'interface/IStake.js'
 
 export abstract class AbstractStake {
-  _isHollow: boolean
   _height: number
   _inicialQuota: number
   abstract _area: number
   abstract _perimeter: number
+  abstract _isHollow: boolean
 
   constructor ({ inicialQuota, height }: IAbstractStake) {
     this._inicialQuota = inicialQuota
