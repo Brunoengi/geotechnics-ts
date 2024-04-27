@@ -61,13 +61,17 @@ export interface ISPT extends ISPTWithoutQuota {
   soilLayers: ISoilLayer[]
 }
 
-interface layerCPT {
+interface ILayerCPTWithoutQuota {
   qc: number
+}
+
+interface ILayerCPT {
+  qc: ILayerCPTWithoutQuota['qc']
   quota: number
 }
 
 export interface ICPT {
-  layers: layerCPT[]
+  layers: ILayerCPTWithoutQuota[]
   inicialQuota: number
 }
 

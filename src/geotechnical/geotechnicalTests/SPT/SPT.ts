@@ -2,7 +2,7 @@ import { type ISoilLayerWithoutQuota, type ISPT, type ISPTWithoutQuota } from 'i
 import abstractTest from '../abstractTest.js'
 
 export default class SPT extends abstractTest<ISoilLayerWithoutQuota[]> {
-  _soilLayers: ISPT['soilLayers']
+  private _soilLayers: ISPT['soilLayers']
 
   constructor (_soilLayers: ISPTWithoutQuota['soilLayers'], private readonly _config: ISPTWithoutQuota['config']) {
     super()
