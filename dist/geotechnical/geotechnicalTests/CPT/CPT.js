@@ -18,27 +18,3 @@ export default class CPT extends abstractTest {
         return this._inicialQuota;
     }
 }
-const myCPT = new CPT([
-    { qc: 10000 },
-    { qc: 10000 },
-    { qc: 10000 },
-    { qc: 10000 },
-    { qc: 10000 },
-    { qc: 10000 },
-    { qc: 10000 },
-    { qc: 10000 },
-    { qc: 10000 },
-    { qc: 10000 },
-    { qc: 10000 },
-    { qc: 10000 },
-    { qc: 10000 },
-    { qc: 10000 },
-    { qc: 10000 },
-    { qc: 10000 },
-    { qc: 10000 },
-    { qc: 10000 },
-    { qc: 10000 },
-    { qc: 10000 },
-    { qc: 10000 }, //5m
-], 1);
-console.log(myCPT);

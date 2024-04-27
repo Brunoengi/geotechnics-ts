@@ -26,32 +26,3 @@ export default class CPT extends abstractTest<ICPT['layers']>{
     return this._inicialQuota
   }
 }
-
-const myCPT = new CPT(
-  [
-   {qc: 10000}, //1m
-   {qc: 10000},
-   {qc: 10000},
-   {qc: 10000},
-   {qc: 10000},
-   {qc: 10000}, //2m
-   {qc: 10000},
-   {qc: 10000},
-   {qc: 10000},
-   {qc: 10000},
-   {qc: 10000}, //3m
-   {qc: 10000},
-   {qc: 10000},
-   {qc: 10000},
-   {qc: 10000},
-   {qc: 10000}, //4m
-   {qc: 10000},
-   {qc: 10000},
-   {qc: 10000},
-   {qc: 10000},
-   {qc: 10000}, //5m
-  ],
-  1
-)
-
-console.log(myCPT)
