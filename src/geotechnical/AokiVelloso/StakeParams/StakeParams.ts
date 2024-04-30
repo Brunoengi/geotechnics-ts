@@ -1,8 +1,8 @@
 import { type StakeParamsVelloso, type IParamsStake, type IParamsStakeJSON, type IValidNumbersStake } from 'interface/IAokiVelloso.js'
-import { JsonReader } from '../../utils/JsonReader.js'
+import { JsonReader } from '../../../utils/JsonReader.js'
 import path from 'path'
-import PathToJsonFolder from '../../utils/PathsProject.js'
-import { optionTypeStake, AuthorStakeType } from '../../enums/AokiVelloso.js'
+import PathToJsonFolder from '../../../utils/PathsProject.js'
+import { optionTypeStake, AuthorStakeType } from '../../../enums/AokiVelloso.js'
 
 export class StakeParams {
   static _paramsAllStakes: IParamsStakeJSON
