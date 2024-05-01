@@ -1,9 +1,3 @@
-/**
- const myStake = await StakeParams.create({
-  numberAuthor: 3,
-  numberType: 9
-})
- */
 import { describe, expect, test } from '@jest/globals';
 import { StakeParams } from './StakeParams.js';
 describe('Computacional tests about Stake Params based on Aoki Velloso method', () => {
@@ -17,11 +11,11 @@ describe('Computacional tests about Stake Params based on Aoki Velloso method', 
                     numberType: possibleNumberType
                 });
                 // get all properties
-                const propriedades = Object.keys(myStake);
+                const properties = Object.keys(myStake);
                 // Verify properties, to be defined and not null
-                propriedades.forEach(propriedade => {
-                    expect(myStake[propriedade]).toBeDefined();
-                    expect(myStake[propriedade]).not.toBeNull();
+                properties.forEach(property => {
+                    expect(myStake[property]).toBeDefined();
+                    expect(myStake[property]).not.toBeNull();
                 });
             }
         }

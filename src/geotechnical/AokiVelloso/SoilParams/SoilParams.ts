@@ -1,9 +1,9 @@
-import SPT from '../geotechnicalTests/SPT/SPT.js'
+import SPT from '../../geotechnicalTests/SPT/SPT.js'
 import { type ILayerPorps, type ISoilLayerWithoutQuota, type IParamsSoilJSON, type ISoilParams, type ISoilParamsVelloso } from 'interface/IAokiVelloso.js'
-import { JsonReader } from '../../utils/JsonReader.js'
+import { JsonReader } from '../../../utils/JsonReader.js'
 import path from 'path'
-import PathToJsonFolder from '../../utils/PathsProject.js'
-import { optionAuthorSoilParams } from '../../enums/AokiVelloso.js'
+import PathToJsonFolder from '../../../utils/PathsProject.js'
+import { optionAuthorSoilParams } from '../../../enums/AokiVelloso.js'
 
 export class SoilParams {
   _LayersProps: ILayerPorps[]

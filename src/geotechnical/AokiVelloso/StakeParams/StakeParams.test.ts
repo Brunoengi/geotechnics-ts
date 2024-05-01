@@ -16,12 +16,12 @@ describe('Computacional tests about Stake Params based on Aoki Velloso method', 
         })
     
         // get all properties
-        const propriedades = Object.keys(myStake);
+        const properties = Object.keys(myStake);
     
         // Verify properties, to be defined and not null
-        propriedades.forEach(propriedade => {
-          expect((myStake as any)[propriedade]).toBeDefined();
-          expect((myStake as any)[propriedade]).not.toBeNull();
+        properties.forEach(property => {
+          expect((myStake as any)[property]).toBeDefined();
+          expect((myStake as any)[property]).not.toBeNull();
         })
       }
     }
