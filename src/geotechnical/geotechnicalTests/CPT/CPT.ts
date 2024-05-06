@@ -1,5 +1,6 @@
 import { ILayerCPT, type ICPT } from 'interface/IAokiVelloso.js'
 import abstractTest from '../abstractTest.js'
+import { findIndexMinimalDiferencePosition } from '../../../utils/Math.js'
 
 export default class CPT extends abstractTest<ICPT['layers']>{
   private _soilLayers: ILayerCPT[]
@@ -26,10 +27,19 @@ export default class CPT extends abstractTest<ICPT['layers']>{
     return this._inicialQuota
   }
 
-  // getCPTLayer(quote: number): number {
-  //   this._soilLayers.find((layer) => {
-  //     layer.quota
-  //   })
-  // }
+  getQcLayerByQuote(quote: number): number {
+    const index = this.getIndexByQuote(quote)
+    return this._soilLayers[index].qc
+  }
+
+  getLayerByQuote(quote: number): ILayerCPT {
+    const index = this.getIndexByQuote(quote)
+    return this._soilLayers[index]
+  }
+
+  getIndexByQuote(quote: number): number {
+    const allQuotaLayers = this._soilLayers.map(layer => layer.quota)
+    return findIndexMinimalDiferencePosition(quote, allQuotaLayers, (0.1 - 0.000001))
+  }
 
 }
