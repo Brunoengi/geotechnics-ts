@@ -25,7 +25,5 @@ describe('Computacional tests about Stake Params based on Aoki Velloso method', 
         })
       }
     }
-
-  
   })
 })

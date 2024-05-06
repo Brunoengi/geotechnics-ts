@@ -25,4 +25,11 @@ export default class CPT extends abstractTest<ICPT['layers']>{
   get inicialQuota () {
     return this._inicialQuota
   }
+
+  // getCPTLayer(quote: number): number {
+  //   this._soilLayers.find((layer) => {
+  //     layer.quota
+  //   })
+  // }
+
 }
