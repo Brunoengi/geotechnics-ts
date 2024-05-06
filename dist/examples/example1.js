@@ -2,7 +2,7 @@ import SPT from "../geotechnical/geotechnicalTests/SPT/SPT.js";
 import { SoilParams } from "../geotechnical/AokiVelloso/SoilParams/SoilParams.js";
 import { StakeParams } from "../geotechnical/AokiVelloso/StakeParams/StakeParams.js";
 import { CircularStake } from "../geotechnical/stake/circular/CircularStake.js";
-import { SoilResistence } from "../geotechnical/AokiVelloso/SoilResistence.js";
+import { SoilResistence } from "../geotechnical/AokiVelloso/SoilResistence/SoilResistence.js";
 const mySPT = new SPT([
     { NSPT: 12, typeSoil: 'SM' },
     { NSPT: 12, typeSoil: 'SM' },

@@ -36,7 +36,6 @@ describe('Computacional tests about CPT (Cone Penetration Test)', () => {
     // Iterator
     allLayers.forEach(layer => {
       expect(typeof layer.quota).toBe('number')
-
   })
 
   })

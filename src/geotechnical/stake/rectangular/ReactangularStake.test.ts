@@ -10,13 +10,13 @@ describe('Test about Circular Stake', () => {
       inicialQuota: 1
     })
 
-     // get Properties
-  const properties = Object.getOwnPropertyNames(stakeSection);
+    // get Properties
+    const properties = Object.getOwnPropertyNames(stakeSection);
 
-  // Iterator
-  properties.forEach(property => {
-    expect((stakeSection as any)[property]).not.toBeNull()
-    expect((stakeSection as any)[property]).not.toBeUndefined()
+    // Iterator
+    properties.forEach(property => {
+      expect((stakeSection as any)[property]).not.toBeNull()
+      expect((stakeSection as any)[property]).not.toBeUndefined()
+    })
   })
-})
 })

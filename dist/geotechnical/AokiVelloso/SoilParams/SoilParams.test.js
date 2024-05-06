@@ -1,7 +1,7 @@
 import { describe, expect, test } from '@jest/globals';
 import { SoilParams } from './SoilParams.js';
 import SPT from '../../geotechnicalTests/SPT/SPT.js';
-describe('Computacional tests about Stake Params based on Aoki Velloso method', () => {
+describe('Computacional tests about Soil Params based on Aoki Velloso method', () => {
     test('Verify if all possibilities are defined and not null', async () => {
         const numberAuthors = 3;
         for (let i = 0; i <= numberAuthors; i++) {
