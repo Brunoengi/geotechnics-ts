@@ -3,7 +3,6 @@ import { RectangularStake } from './RectangularStake.js'
 
 describe('Test about Circular Stake', () => {
   test('checking that all properties of the class are not null or not undefined', () => {
-    
     const stakeSection = new RectangularStake({
       side: 0.3,
       height: 5,
@@ -11,7 +10,7 @@ describe('Test about Circular Stake', () => {
     })
 
     // get Properties
-    const properties = Object.getOwnPropertyNames(stakeSection);
+    const properties = Object.getOwnPropertyNames(stakeSection)
 
     // Iterator
     properties.forEach(property => {

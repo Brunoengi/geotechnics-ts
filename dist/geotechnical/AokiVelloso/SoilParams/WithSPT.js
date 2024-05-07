@@ -1,6 +1,6 @@
 import SPT from '../../geotechnicalTests/SPT/SPT.js';
-import AbstractSoilResistence from '../SoilResistence/AbstractSoilResistence.js';
-export class SoilParamsWithSPT extends AbstractSoilResistence {
+import AbstractSoilParams from './AbstractSoilResistence.js';
+export class SoilParamsWithSPT extends AbstractSoilParams {
     constructor(SPT, config) {
         super();
         const author = config.author;

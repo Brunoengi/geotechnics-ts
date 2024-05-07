@@ -1,9 +1,9 @@
 import SPT from '../../geotechnicalTests/SPT/SPT.js'
-import { type ILayerPropsWithSPT, type ISoilLayerWithoutQuota, type IParamsSoilJSON, type ISoilParams, type ISoilParamsVelloso } from 'interface/IAokiVelloso.js'
+import { type ILayerPropsWithSPT, type ISoilParams, type ISoilParamsVelloso } from 'interface/IAokiVelloso.js'
 import { optionAuthorSoilParams } from '../../../enums/AokiVelloso.js'
-import AbstractSoilResistence from '../SoilResistence/AbstractSoilResistence.js'
+import AbstractSoilParams from './AbstractSoilResistence.js'
 
-export class SoilParamsWithSPT extends AbstractSoilResistence {
+export class SoilParamsWithSPT extends AbstractSoilParams {
   _LayersProps: ILayerPropsWithSPT[]
 
   private constructor (SPT: SPT, config: ISoilParams['config']) {

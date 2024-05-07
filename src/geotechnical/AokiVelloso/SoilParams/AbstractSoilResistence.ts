@@ -4,7 +4,7 @@ import path from "path"
 import PathToJsonFolder from "../../../utils/PathsProject.js"
 import { optionAuthorSoilParams } from "../../../enums/AokiVelloso.js"
 
-export default abstract class AbstractSoilResistence {
+export default abstract class AbstractSoilParams {
  static _paramsSoil: IParamsSoilJSON
  _config: {
   selectedAuthorSoilParams: optionAuthorSoilParams
@@ -14,10 +14,10 @@ export default abstract class AbstractSoilResistence {
     this._paramsSoil = await JsonReader.readFileAsync(path.join(PathToJsonFolder(), 'AokiVelloso', 'soil.json'))
   }
   static async initialize (): Promise<void> {
-    await AbstractSoilResistence.readFile()
+    await AbstractSoilParams.readFile()
   }
   getKav_alfaavLayer (typeSoil: ISoilLayerWithoutQuota['typeSoil'], selectedAuthorSoilParams: optionAuthorSoilParams): ISoilParamsVelloso {
     const selectedOption = optionAuthorSoilParams[selectedAuthorSoilParams]
-    return AbstractSoilResistence._paramsSoil[typeSoil as keyof IParamsSoilJSON][selectedOption as keyof typeof optionAuthorSoilParams]
+    return AbstractSoilParams._paramsSoil[typeSoil as keyof IParamsSoilJSON][selectedOption as keyof typeof optionAuthorSoilParams]
   }
 }
