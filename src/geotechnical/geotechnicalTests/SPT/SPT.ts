@@ -1,5 +1,5 @@
 import { ISoilLayer, type ISoilLayerWithoutQuota, type ISPT, type ISPTWithoutQuota } from 'interface/IAokiVelloso.js'
-import abstractTest from '../abstractTest.js'
+import abstractTest from '../AbstractTest.js'
 import { findIndexMinimalDiferencePosition } from '../../../utils/Find.js'
 
 export default class SPT extends abstractTest<ISoilLayerWithoutQuota[]> {

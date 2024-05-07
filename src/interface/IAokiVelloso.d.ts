@@ -83,10 +83,19 @@ export interface ISoilResistenceAll {
   sumSideResistence: number
 }
 
-export interface ILayerPorps {
-  NSPT: ISoilLayer['NSPT']
+export interface IBaseLayerProps {
   quota: ISoilLayer['quota']
   typeSoil: ISoilLayer['typeSoil']
   kav: ISoilParamsVelloso['kav']
   alfaav: ISoilParamsVelloso['alfaav']
 }
+
+export interface ILayerPropsWithSPT extends IBaseLayerProps {
+  NSPT: ISoilLayer['NSPT']
+}
+
+export interface ILayerPropsWithCPT extends IBaseLayerProps {
+  qc: ILayerCPT['qc']
+}
+
+

@@ -1,5 +1,5 @@
 import { describe, expect, test } from '@jest/globals'
-import { SoilParams } from './SoilParams.js'
+import { SoilParamsWithSPT } from './WithSPT.js'
 import SPT from '../../geotechnicalTests/SPT/SPT.js'
 
 describe('Computacional tests about Soil Params based on Aoki Velloso method', () => {
@@ -32,7 +32,7 @@ describe('Computacional tests about Soil Params based on Aoki Velloso method', (
         waterLevel: 1,
         })
       
-      const soilParams = await SoilParams.create(mySPT, {
+      const soilParams = await SoilParamsWithSPT.create(mySPT, {
         author: numberAuthors
       })
 

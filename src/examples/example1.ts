@@ -1,8 +1,8 @@
 import SPT from "../geotechnical/geotechnicalTests/SPT/SPT.js"
-import { SoilParams } from "../geotechnical/AokiVelloso/SoilParams/SoilParams.js"
+import { SoilParamsWithSPT } from "../geotechnical/AokiVelloso/SoilParams/WithSPT.js"
 import { StakeParams } from "../geotechnical/AokiVelloso/StakeParams/StakeParams.js"
 import { CircularStake } from "../geotechnical/stake/circular/CircularStake.js"
-import { SoilResistence } from "../geotechnical/AokiVelloso/SoilResistence/SoilResistence.js"
+import { SoilResistenceWithSPT } from "../geotechnical/AokiVelloso/SoilResistence/WithSPT.js"
 
 
 const mySPT = new SPT([
@@ -29,7 +29,7 @@ const mySPT = new SPT([
   waterLevel: 1,
   })
 
-const soilParams = await SoilParams.create(mySPT, {
+const soilParams = await SoilParamsWithSPT.create(mySPT, {
   author: 2
 })
 
@@ -44,6 +44,6 @@ const stakeSection = new CircularStake({
   inicialQuota: 1
 })
 
-const mySoilResistence = new SoilResistence(stakeSection, soilParams, myStake)
+const mySoilResistence = new SoilResistenceWithSPT(stakeSection, soilParams, myStake)
 console.log(mySoilResistence)
 

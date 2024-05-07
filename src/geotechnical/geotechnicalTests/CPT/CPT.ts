@@ -1,5 +1,5 @@
 import { ILayerCPT, type ICPT } from 'interface/IAokiVelloso.js'
-import abstractTest from '../abstractTest.js'
+import abstractTest from '../AbstractTest.js'
 import { findIndexMinimalDiferencePosition } from '../../../utils/Find.js'
 
 export default class CPT extends abstractTest<ICPT['layers']>{

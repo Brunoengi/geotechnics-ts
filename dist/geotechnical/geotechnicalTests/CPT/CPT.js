@@ -1,4 +1,4 @@
-import abstractTest from '../abstractTest.js';
+import abstractTest from '../AbstractTest.js';
 import { findIndexMinimalDiferencePosition } from '../../../utils/Find.js';
 export default class CPT extends abstractTest {
     constructor(soilLayers, _inicialQuota) {

@@ -1,7 +1,7 @@
 import { describe, expect, test } from '@jest/globals'
-import { SoilResistence } from './SoilResistence.js'
+import { SoilResistenceWithSPT } from './WithSPT.js'
 import SPT from '../../geotechnicalTests/SPT/SPT.js'
-import { SoilParams } from '../SoilParams/SoilParams.js'
+import { SoilParamsWithSPT } from '../SoilParams/WithSPT.js'
 import { StakeParams } from '../StakeParams/StakeParams.js'
 import { CircularStake } from '../../stake/circular/CircularStake.js'
 
@@ -33,7 +33,7 @@ describe('Computacional tests about Soil Resistence based on Aoki Velloso method
   waterLevel: 1,
   })
 
-  const soilParams = await SoilParams.create(mySPT, {
+  const soilParams = await SoilParamsWithSPT.create(mySPT, {
   author: 2
   })
 
@@ -48,7 +48,7 @@ describe('Computacional tests about Soil Resistence based on Aoki Velloso method
   inicialQuota: 1
   })
 
-  const mySoilResistence = new SoilResistence(stakeSection, soilParams, myStake)
+  const mySoilResistence = new SoilResistenceWithSPT(stakeSection, soilParams, myStake)
 
   // get Properties
   const properties = Object.getOwnPropertyNames(mySoilResistence);
