@@ -1,5 +1,5 @@
 import { describe, expect, test } from '@jest/globals'
-import { findIndexMinimalDiferencePosition } from './Math.js'
+import { findIndexMinimalDiferencePosition } from './Find.js'
 
 describe('Computacional tests about Math functions)', () => {
   test('Check situation without correction value (third parameter of findIndex)', () => {

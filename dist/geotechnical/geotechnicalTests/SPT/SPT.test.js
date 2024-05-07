@@ -33,4 +33,27 @@ describe('Computacional tests about SPT (Standart Penetration Test)', () => {
             expect(mySPT[property]).not.toBeUndefined();
         });
     });
+    test('Check if NSPT greater than 50 causes NSPT = 50', () => {
+        const mySPTwithNSPTBetter50 = new SPT([
+            { NSPT: 60, typeSoil: 'SM' },
+            { NSPT: 50, typeSoil: 'SM' },
+            { NSPT: 40, typeSoil: 'SM' },
+            { NSPT: 40, typeSoil: 'SM' },
+            { NSPT: 60, typeSoil: 'SM' },
+        ], {
+            inicialQuota: 1,
+            waterLevel: 1,
+        });
+        const mymySPTwithNSPT50 = new SPT([
+            { NSPT: 50, typeSoil: 'SM' },
+            { NSPT: 50, typeSoil: 'SM' },
+            { NSPT: 40, typeSoil: 'SM' },
+            { NSPT: 40, typeSoil: 'SM' },
+            { NSPT: 50, typeSoil: 'SM' },
+        ], {
+            inicialQuota: 1,
+            waterLevel: 1,
+        });
+        expect(mySPTwithNSPTBetter50).toEqual(mymySPTwithNSPT50);
+    });
 });

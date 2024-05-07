@@ -1,5 +1,5 @@
 import abstractTest from '../abstractTest.js';
-import { findIndexMinimalDiferencePosition } from '../../../utils/Math.js';
+import { findIndexMinimalDiferencePosition } from '../../../utils/Find.js';
 export default class CPT extends abstractTest {
     constructor(soilLayers, _inicialQuota) {
         super();
@@ -27,7 +27,10 @@ export default class CPT extends abstractTest {
         return this._soilLayers[index];
     }
     getIndexByQuote(quote) {
-        const allQuotaLayers = this._soilLayers.map(layer => layer.quota);
+        const allQuotaLayers = this.getQuotaLayers();
         return findIndexMinimalDiferencePosition(quote, allQuotaLayers, (0.1 - 0.000001));
+    }
+    getQuotaLayers() {
+        return this._soilLayers.map(layer => layer.quota);
     }
 }

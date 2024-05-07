@@ -76,7 +76,6 @@ export class SoilResistence {
 
   // Verify this function when deltaL =! 1, not SPT
   sideResistence (alfaav: number, kav: number, NSPT: number, F2: number, perimeter: number, deltaL: number = 1): number {
-    console.log({ alfaav, kav, NSPT, F2, perimeter, deltaL })
     const valor = (alfaav * kav * NSPT * perimeter * deltaL) / (100 * F2)
 
     return valor
