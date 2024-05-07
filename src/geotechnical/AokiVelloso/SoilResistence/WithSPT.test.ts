@@ -49,7 +49,7 @@ describe('Computacional tests about Soil Resistence based on Aoki Velloso method
     const mySoilResistence = new SoilResistenceWithSPT(stakeSection, soilParams, myStake)
 
     // get Properties
-    const properties = Object.getOwnPropertyNames(mySoilResistence);
+    const properties = Object.getOwnPropertyNames(mySoilResistence)
 
     // Iterator
     properties.forEach(property => {

@@ -1,10 +1,10 @@
-import { ISoilLayer, type ISoilLayerWithoutQuota, type ISPT, type ISPTWithoutQuota } from 'interface/IAokiVelloso.js'
+import { type ISoilLayer, type ISoilLayerWithoutQuota, type ISPT, type ISPTWithoutQuota } from 'interface/IAokiVelloso.js'
 import abstractTest from '../AbstractTest.js'
 import { findIndexMinimalDiferencePosition } from '../../../utils/Find.js'
 
 export default class SPT extends abstractTest<ISoilLayerWithoutQuota[]> {
-  private _soilLayers: ISPT['soilLayers']
-  private _maxNSPT = 50
+  private readonly _soilLayers: ISPT['soilLayers']
+  private readonly _maxNSPT = 50
 
   constructor (_soilLayers: ISPTWithoutQuota['soilLayers'], private readonly _config: ISPTWithoutQuota['config']) {
     super()
@@ -32,19 +32,19 @@ export default class SPT extends abstractTest<ISoilLayerWithoutQuota[]> {
     return this.soilLayers[Math.floor(quote) - 1].NSPT
   }
 
-  protected getQuotaLayers(): number[] {
+  protected getQuotaLayers (): number[] {
     return this._soilLayers.map(layer => layer.quota)
   }
 
-  protected getLayerByQuote(quote: number): ISoilLayer {
+  protected getLayerByQuote (quote: number): ISoilLayer {
     const allQuotaLayers = this.getQuotaLayers()
     const index = findIndexMinimalDiferencePosition(quote, allQuotaLayers, (0.5 - 0.000001))
     return this._soilLayers[index]
   }
 
-  setMaxNSPT(soilLayers: ISPT['soilLayers']): void {
+  setMaxNSPT (soilLayers: ISPT['soilLayers']): void {
     soilLayers.forEach(layer => {
-      layer.NSPT >= this._maxNSPT ? layer.NSPT = this._maxNSPT : ''
+      if (layer.NSPT >= this._maxNSPT) layer.NSPT = this._maxNSPT
     })
   }
 }
