@@ -1,5 +1,5 @@
 import { describe, expect, test } from '@jest/globals';
-import SPT from "./SPT.js";
+import SPT from './SPT.js';
 describe('Computacional tests about SPT (Standart Penetration Test)', () => {
     test('Check properties if is not null or not undefined', () => {
         const mySPT = new SPT([
@@ -23,7 +23,7 @@ describe('Computacional tests about SPT (Standart Penetration Test)', () => {
             { NSPT: 4, typeSoil: 'CM' }
         ], {
             inicialQuota: 1,
-            waterLevel: 1,
+            waterLevel: 1
         });
         // get Properties
         const properties = Object.getOwnPropertyNames(mySPT);
@@ -39,20 +39,20 @@ describe('Computacional tests about SPT (Standart Penetration Test)', () => {
             { NSPT: 50, typeSoil: 'SM' },
             { NSPT: 40, typeSoil: 'SM' },
             { NSPT: 40, typeSoil: 'SM' },
-            { NSPT: 60, typeSoil: 'SM' },
+            { NSPT: 60, typeSoil: 'SM' }
         ], {
             inicialQuota: 1,
-            waterLevel: 1,
+            waterLevel: 1
         });
         const mymySPTwithNSPT50 = new SPT([
             { NSPT: 50, typeSoil: 'SM' },
             { NSPT: 50, typeSoil: 'SM' },
             { NSPT: 40, typeSoil: 'SM' },
             { NSPT: 40, typeSoil: 'SM' },
-            { NSPT: 50, typeSoil: 'SM' },
+            { NSPT: 50, typeSoil: 'SM' }
         ], {
             inicialQuota: 1,
-            waterLevel: 1,
+            waterLevel: 1
         });
         expect(mySPTwithNSPTBetter50).toEqual(mymySPTwithNSPT50);
     });

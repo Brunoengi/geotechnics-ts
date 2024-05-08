@@ -4,13 +4,13 @@ export class SoilParamsWithSPT extends AbstractSoilParams {
     constructor(SPT, config) {
         super();
         const author = config.author;
-        this._LayersProps = [];
+        this._layersProps = [];
         this._config = {
             selectedAuthorSoilParams: author
         };
         SPT.soilLayers.forEach((element, index) => {
             const { kav, alfaav } = this.setKav_alfaavLayer(SPT, index, author);
-            this._LayersProps.push({
+            this._layersProps.push({
                 NSPT: SPT.soilLayers[index].NSPT,
                 quota: SPT.soilLayers[index].quota,
                 typeSoil: SPT.soilLayers[index].typeSoil,
@@ -19,8 +19,8 @@ export class SoilParamsWithSPT extends AbstractSoilParams {
             });
         });
     }
-    setKav_alfaavLayer(SPT, index, autor) {
-        const { alfaav, kav } = this.getKav_alfaavLayer(SPT.soilLayers[index].typeSoil, autor);
+    setKav_alfaavLayer(SPT, index, author) {
+        const { alfaav, kav } = this.getKav_alfaavLayer(SPT.soilLayers[index].typeSoil, author);
         return {
             kav, alfaav
         };

@@ -1,9 +1,11 @@
-import abstractTest from '../AbstractTest.js';
+import abstractTest from '../abstractTest.js';
 import { findIndexMinimalDiferencePosition } from '../../../utils/Find.js';
 export default class CPT extends abstractTest {
     constructor(soilLayers, _inicialQuota) {
         super();
-        this._soilLayers = soilLayers;
+        this._soilLayers = soilLayers.map(layer => {
+            return Object.assign(Object.assign({}, layer), { 'quota': 0 });
+        });
         this.addHeightForEachLayer(soilLayers, _inicialQuota);
     }
     addHeightForEachLayer(layers, inicialQuota) {

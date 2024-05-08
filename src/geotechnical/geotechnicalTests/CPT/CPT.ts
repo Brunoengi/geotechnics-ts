@@ -1,5 +1,5 @@
 import { ILayerCPT, type ICPT } from 'interface/IAokiVelloso.js'
-import abstractTest from '../AbstractTest.js'
+import abstractTest from '../abstractTest.js'
 import { findIndexMinimalDiferencePosition } from '../../../utils/Find.js'
 
 export default class CPT extends abstractTest<ICPT['layers']>{
@@ -8,7 +8,9 @@ export default class CPT extends abstractTest<ICPT['layers']>{
 
   constructor (soilLayers: ICPT['layers'], _inicialQuota: ICPT['inicialQuota']) {
     super()
-    this._soilLayers = soilLayers as ILayerCPT[]
+    this._soilLayers = soilLayers.map(layer => {
+      return {...layer, 'quota': 0}
+    })
     this.addHeightForEachLayer(soilLayers, _inicialQuota)
   }
 

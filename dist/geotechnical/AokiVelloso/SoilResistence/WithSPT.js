@@ -14,11 +14,11 @@ export class SoilResistenceWithSPT {
     }
     sumResistence() {
         const referenceLayer = Math.floor(this._stake._inicialQuota + this._stake._height);
-        const params = Object.assign({ inicialStakeQuota: this._stake._inicialQuota, heightStake: this._stake._height, depthStake: this._stake._inicialQuota + this._stake._height, referenceLayer, baseArea: this._stake._area, perimeter: this._stake._perimeter, F1: this._stakeParams._myParamStake.F1, F2: this._stakeParams._myParamStake.F2 }, this._soilParams._LayersProps[referenceLayer]);
+        const params = Object.assign({ inicialStakeQuota: this._stake._inicialQuota, heightStake: this._stake._height, depthStake: this._stake._inicialQuota + this._stake._height, referenceLayer, baseArea: this._stake._area, perimeter: this._stake._perimeter, F1: this._stakeParams._myParamStake.F1, F2: this._stakeParams._myParamStake.F2 }, this._soilParams._layersProps[referenceLayer]);
         const resistenceBase = this.calculateBaseResistence(params.kav, this.calculateNbar(params.depthStake), params.F1, params.baseArea);
         this.setBaseResistence(resistenceBase);
         const allSideResistence = [];
-        this._soilParams._LayersProps.forEach((layer, index) => {
+        this._soilParams._layersProps.forEach((layer, index) => {
             const { NSPT, alfaav, kav } = layer;
             allSideResistence.push(this.sideResistence(alfaav, kav, NSPT, params.F2, params.perimeter));
         });
@@ -51,7 +51,7 @@ export class SoilResistenceWithSPT {
         const quotaToCalculateNbar = [Math.floor(depthStake) - 1, Math.floor(depthStake), Math.floor(depthStake) + 1];
         const layersToNBar = [];
         quotaToCalculateNbar.forEach((quota) => {
-            const findQuote = this._soilParams._LayersProps.find((element) => element.quota === quota);
+            const findQuote = this._soilParams._layersProps.find((element) => element.quota === quota);
             if (findQuote === undefined) {
                 throw new Error('Quote is not defined');
             }
@@ -61,7 +61,7 @@ export class SoilResistenceWithSPT {
         return (SPTLayer[0] + SPTLayer[1] + SPTLayer[2]) / 3;
     }
     calculateSideResistence() {
-        const inicialLayerQuota = this._soilParams._LayersProps[0].quota;
+        const inicialLayerQuota = this._soilParams._layersProps[0].quota;
         const quoteStake = this._stake._height;
         let response = 0;
         for (let i = 0; quoteStake - inicialLayerQuota < i; i++) {
@@ -73,10 +73,10 @@ export class SoilResistenceWithSPT {
         const { deltaL, perimeter, NSPTLayer } = {
             deltaL: 1,
             perimeter: this._stake._perimeter,
-            NSPTLayer: this._soilParams._LayersProps[quoteLayer].NSPT
+            NSPTLayer: this._soilParams._layersProps[quoteLayer].NSPT
         };
         const { F2 } = this._stakeParams._myParamStake;
-        const { alfaav, kav } = this._soilParams._LayersProps[quoteLayer];
+        const { alfaav, kav } = this._soilParams._layersProps[quoteLayer];
         return alfaav * kav * NSPTLayer * perimeter * deltaL / F2;
     }
 }

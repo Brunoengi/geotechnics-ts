@@ -4,19 +4,19 @@ import { optionAuthorSoilParams } from '../../../enums/AokiVelloso.js'
 import AbstractSoilParams from './AbstractSoilResistence.js'
 
 export class SoilParamsWithSPT extends AbstractSoilParams {
-  _LayersProps: ILayerPropsWithSPT[]
+  _layersProps: ILayerPropsWithSPT[]
 
   private constructor (SPT: SPT, config: ISoilParams['config']) {
     super()
     const author: optionAuthorSoilParams = config.author
-    this._LayersProps = []
+    this._layersProps = []
     this._config = {
       selectedAuthorSoilParams: author
     }
     SPT.soilLayers.forEach((element, index) => {
       const { kav, alfaav } = this.setKav_alfaavLayer(SPT, index, author)
 
-      this._LayersProps.push({
+      this._layersProps.push({
         NSPT: SPT.soilLayers[index].NSPT,
         quota: SPT.soilLayers[index].quota,
         typeSoil: SPT.soilLayers[index].typeSoil,
@@ -26,13 +26,12 @@ export class SoilParamsWithSPT extends AbstractSoilParams {
     })
   }
 
-  setKav_alfaavLayer (SPT: SPT, index: number, autor: optionAuthorSoilParams): ISoilParamsVelloso {
-    const { alfaav, kav } = this.getKav_alfaavLayer(SPT.soilLayers[index].typeSoil, autor)
+  setKav_alfaavLayer (SPT: SPT, index: number, author: optionAuthorSoilParams): ISoilParamsVelloso {
+    const { alfaav, kav } = this.getKav_alfaavLayer(SPT.soilLayers[index].typeSoil, author)
     return {
       kav, alfaav
     }
   }
-
 
   static async create (SPTI: SPT, { author }: ISoilParams['config']): Promise<SoilParamsWithSPT> {
     await this.initialize()

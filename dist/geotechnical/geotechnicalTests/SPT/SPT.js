@@ -1,4 +1,4 @@
-import abstractTest from '../AbstractTest.js';
+import abstractTest from '../abstractTest.js';
 import { findIndexMinimalDiferencePosition } from '../../../utils/Find.js';
 export default class SPT extends abstractTest {
     constructor(_soilLayers, _config) {
@@ -34,7 +34,8 @@ export default class SPT extends abstractTest {
     }
     setMaxNSPT(soilLayers) {
         soilLayers.forEach(layer => {
-            layer.NSPT >= this._maxNSPT ? layer.NSPT = this._maxNSPT : '';
+            if (layer.NSPT >= this._maxNSPT)
+                layer.NSPT = this._maxNSPT;
         });
     }
 }

@@ -4,7 +4,10 @@ export function findIndexMinimalDiferencePosition(myPosition, listPosition, corr
     let indexMinimalDifference = 0;
     for (let i = 0; i < listPosition.length; i++) {
         currentDifference = Math.abs(listPosition[i] + correctionlistValue - myPosition);
-        minimalDifference > currentDifference ? (indexMinimalDifference = i, minimalDifference = currentDifference) : '';
+        if (minimalDifference > currentDifference) {
+            indexMinimalDifference = i;
+            minimalDifference = currentDifference;
+        }
     }
     return indexMinimalDifference;
 }

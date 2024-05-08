@@ -1,9 +1,18 @@
-export interface ISoilLayerWithoutQuota {
+import SPT from "geotechnical/geotechnicalTests/SPT/SPT.ts"
+import CPT from "geotechnical/geotechnicalTests/CPT/CPT.ts"
+
+export type geotechnicalTest = CPT | SPT
+
+export interface ISoilLayerWithSPTWithoutQuota {
   NSPT: number
+  typeSoil: ISoilLayerWithoutQuota['typeSoil'] 
+}
+
+export interface ISoilLayerWithoutQuota {
   typeSoil: 'S' | 'SM' | 'SMC' | 'SC' | 'SCM' | 'M' | 'MS' | 'MSC' | 'MC' | 'MCS' | 'C' | 'CS' | 'CSM' | 'CM' | 'CMS'
 }
 
-export interface ISoilLayer extends ISoilLayerWithoutQuota {
+export interface ISoilLayer extends ISoilLayerWithSPTWithoutQuota {
   quota: number
 }
 
@@ -18,7 +27,7 @@ interface ITypeParamsSoil {
   Monteiro: ISoilParamsVelloso
 }
 
-export type IParamsSoilJSON = Record<string, ITypeParamsSoil >
+export type IParamsSoilJSON = Record<string, ITypeParamsSoil>
 
 export interface ISoilParams {
   SPT: SPT
@@ -50,7 +59,7 @@ export interface IValidNumbersStake {
 }
 
 export interface ISPTWithoutQuota {
-  soilLayers: ISoilLayerWithoutQuota[]
+  soilLayers: ISoilLayerWithSPTWithoutQuota[]
   config: {
     inicialQuota: number
     waterLevel: number
@@ -63,11 +72,13 @@ export interface ISPT extends ISPTWithoutQuota {
 
 interface ILayerCPTWithoutQuota {
   qc: number
+  typeSoil: ISoilLayerWithSPTWithoutQuota['typeSoil']
 }
 
 interface ILayerCPT {
   qc: ILayerCPTWithoutQuota['qc']
   quota: number
+  typeSoil: ISoilLayerWithSPTWithoutQuota['typeSoil']
 }
 
 export interface ICPT {

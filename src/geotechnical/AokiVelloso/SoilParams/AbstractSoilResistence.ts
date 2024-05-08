@@ -1,4 +1,4 @@
-import { type IParamsSoilJSON, type ISoilLayerWithoutQuota, type ISoilParamsVelloso } from 'interface/IAokiVelloso.js'
+import { type geotechnicalTest, type IParamsSoilJSON, type ISoilLayerWithoutQuota, type ISoilParamsVelloso } from 'interface/IAokiVelloso.js'
 import { JsonReader } from '../../../utils/JsonReader.js'
 import path from 'path'
 import PathToJsonFolder from '../../../utils/PathsProject.js'
@@ -22,4 +22,5 @@ export default abstract class AbstractSoilParams {
     const selectedOption = optionAuthorSoilParams[selectedAuthorSoilParams]
     return AbstractSoilParams._paramsSoil[typeSoil as keyof IParamsSoilJSON][selectedOption as keyof typeof optionAuthorSoilParams]
   }
+  abstract setKav_alfaavLayer (geotechnicalTest: geotechnicalTest, index: number, author: optionAuthorSoilParams): { kav: number, alfaav: number }
 }

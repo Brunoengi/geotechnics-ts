@@ -27,7 +27,7 @@ describe('Computacional tests about Soil Resistence based on Aoki Velloso method
             { NSPT: 4, typeSoil: 'CM' }
         ], {
             inicialQuota: 1,
-            waterLevel: 1,
+            waterLevel: 1
         });
         const soilParams = await SoilParamsWithSPT.create(mySPT, {
             author: 2

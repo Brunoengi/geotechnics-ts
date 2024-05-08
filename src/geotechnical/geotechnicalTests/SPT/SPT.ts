@@ -1,8 +1,9 @@
-import { type ISoilLayer, type ISoilLayerWithoutQuota, type ISPT, type ISPTWithoutQuota } from 'interface/IAokiVelloso.js'
-import abstractTest from '../AbstractTest.js'
+import { type ISoilLayer, type ISoilLayerWithSPTWithoutQuota, type ISPT, type ISPTWithoutQuota } from 'interface/IAokiVelloso.js'
+import abstractTest from '../abstractTest.js'
 import { findIndexMinimalDiferencePosition } from '../../../utils/Find.js'
+import { optionAuthorSoilParams } from '../../../enums/AokiVelloso.js'
 
-export default class SPT extends abstractTest<ISoilLayerWithoutQuota[]> {
+export default class SPT extends abstractTest<ISoilLayerWithSPTWithoutQuota[]> {
   private readonly _soilLayers: ISPT['soilLayers']
   private readonly _maxNSPT = 50
 
@@ -22,7 +23,7 @@ export default class SPT extends abstractTest<ISoilLayerWithoutQuota[]> {
     return this._config
   }
 
-  protected addHeightForEachLayer (soilLayers: ISoilLayerWithoutQuota[], inicialQuota: number): void {
+  protected addHeightForEachLayer (soilLayers: ISoilLayerWithSPTWithoutQuota[], inicialQuota: number): void {
     soilLayers.forEach((oneLayer, index) => {
       this._soilLayers[index].quota = inicialQuota + index
     })
