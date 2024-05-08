@@ -1,11 +1,11 @@
-import SPT from "geotechnical/geotechnicalTests/SPT/SPT.ts"
-import CPT from "geotechnical/geotechnicalTests/CPT/CPT.ts"
+import type SPT from 'geotechnical/geotechnicalTests/SPT/SPT.ts'
+import type CPT from 'geotechnical/geotechnicalTests/CPT/CPT.ts'
 
 export type geotechnicalTest = CPT | SPT
 
 export interface ISoilLayerWithSPTWithoutQuota {
   NSPT: number
-  typeSoil: ISoilLayerWithoutQuota['typeSoil'] 
+  typeSoil: ISoilLayerWithoutQuota['typeSoil']
 }
 
 export interface ISoilLayerWithoutQuota {
@@ -108,5 +108,3 @@ export interface ILayerPropsWithSPT extends IBaseLayerProps {
 export interface ILayerPropsWithCPT extends IBaseLayerProps {
   qc: ILayerCPT['qc']
 }
-
-

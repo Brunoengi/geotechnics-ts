@@ -1,7 +1,6 @@
 import { type ISoilLayer, type ISoilLayerWithSPTWithoutQuota, type ISPT, type ISPTWithoutQuota } from 'interface/IAokiVelloso.js'
 import abstractTest from '../abstractTest.js'
 import { findIndexMinimalDiferencePosition } from '../../../utils/Find.js'
-import { optionAuthorSoilParams } from '../../../enums/AokiVelloso.js'
 
 export default class SPT extends abstractTest<ISoilLayerWithSPTWithoutQuota[]> {
   private readonly _soilLayers: ISPT['soilLayers']

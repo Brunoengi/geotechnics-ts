@@ -1,15 +1,15 @@
-import { ILayerCPT, type ICPT } from 'interface/IAokiVelloso.js'
+import { type ILayerCPT, type ICPT } from 'interface/IAokiVelloso.js'
 import abstractTest from '../abstractTest.js'
 import { findIndexMinimalDiferencePosition } from '../../../utils/Find.js'
 
-export default class CPT extends abstractTest<ICPT['layers']>{
-  private _soilLayers: ILayerCPT[]
-  private _inicialQuota: number
+export default class CPT extends abstractTest<ICPT['layers']> {
+  private readonly _soilLayers: ILayerCPT[]
+  private readonly _inicialQuota: number
 
   constructor (soilLayers: ICPT['layers'], _inicialQuota: ICPT['inicialQuota']) {
     super()
     this._soilLayers = soilLayers.map(layer => {
-      return {...layer, 'quota': 0}
+      return { ...layer, quota: 0 }
     })
     this.addHeightForEachLayer(soilLayers, _inicialQuota)
   }
@@ -21,30 +21,30 @@ export default class CPT extends abstractTest<ICPT['layers']>{
     })
   }
 
-  get soilLayers () {
+  get soilLayers (): ILayerCPT[] {
     return this._soilLayers
   }
 
-  get inicialQuota () {
+  get inicialQuota (): number {
     return this._inicialQuota
   }
 
-  getQcLayerByQuote(quote: number): number {
+  getQcLayerByQuote (quote: number): number {
     const index = this.getIndexByQuote(quote)
     return this._soilLayers[index].qc
   }
 
-  getLayerByQuote(quote: number): ILayerCPT {
+  getLayerByQuote (quote: number): ILayerCPT {
     const index = this.getIndexByQuote(quote)
     return this._soilLayers[index]
   }
 
-  getIndexByQuote(quote: number): number {
+  getIndexByQuote (quote: number): number {
     const allQuotaLayers = this.getQuotaLayers()
     return findIndexMinimalDiferencePosition(quote, allQuotaLayers, (0.1 - 0.000001))
   }
 
-  protected getQuotaLayers(): number[] {
+  protected getQuotaLayers (): number[] {
     return this._soilLayers.map(layer => layer.quota)
   }
 }
