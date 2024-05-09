@@ -1,8 +1,8 @@
-import SPT from "../geotechnical/geotechnicalTests/SPT/SPT.js";
-import { SoilParamsWithSPT } from "../geotechnical/AokiVelloso/SoilParams/WithSPT.js";
-import { StakeParams } from "../geotechnical/AokiVelloso/StakeParams/StakeParams.js";
-import { CircularStake } from "../geotechnical/stake/circular/CircularStake.js";
-import { SoilResistenceWithSPT } from "../geotechnical/AokiVelloso/SoilResistence/WithSPT.js";
+import SPT from '../geotechnical/geotechnicalTests/SPT/SPT.js';
+import { SoilParamsWithSPT } from '../geotechnical/AokiVelloso/SoilParams/WithSPT.js';
+import { StakeParams } from '../geotechnical/AokiVelloso/StakeParams/StakeParams.js';
+import { CircularStake } from '../geotechnical/stake/circular/CircularStake.js';
+import { SoilResistenceWithSPT } from '../geotechnical/AokiVelloso/SoilResistence/WithSPT.js';
 const mySPT = new SPT([
     { NSPT: 12, typeSoil: 'SM' },
     { NSPT: 12, typeSoil: 'SM' },
@@ -24,7 +24,7 @@ const mySPT = new SPT([
     { NSPT: 4, typeSoil: 'CM' }
 ], {
     inicialQuota: 1,
-    waterLevel: 1,
+    waterLevel: 1
 });
 const soilParams = await SoilParamsWithSPT.create(mySPT, {
     author: 2

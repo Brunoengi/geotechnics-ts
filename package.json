@@ -5,9 +5,11 @@
   "main": "index.js",
   "type": "module",
   "jest": {
+    "resolver": "ts-jest-resolver",
     "transform": {},
-    "extensionsToTreatAsEsm": [".ts"],
-    "preset": "ts-jest"
+    "extensionsToTreatAsEsm": [
+      ".ts"
+    ]
   },
   "scripts": {
     "clear_jest": "jest --clearCache",
@@ -32,6 +34,7 @@
     "typescript": "^5.4.5"
   },
   "dependencies": {
-    "@types/node": "^20.12.7"
+    "@types/node": "^20.12.7",
+    "ts-jest-resolver": "^2.0.1"
   }
 }

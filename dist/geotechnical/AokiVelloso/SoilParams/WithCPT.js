@@ -1,4 +1,4 @@
-import AbstractSoilParams from "./AbstractSoilResistence.js";
+import AbstractSoilParams from './AbstractSoilResistence.js';
 export class SoilParamsWithCPT extends AbstractSoilParams {
     constructor(CPT, config) {
         super();

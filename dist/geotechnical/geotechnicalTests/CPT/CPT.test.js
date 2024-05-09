@@ -66,7 +66,7 @@ describe('Computacional tests about CPT (Cone Penetration Test)', () => {
             {
                 qc: 10000,
                 typeSoil: 'S'
-            }, // 4m
+            } // 4m
         ], 1);
         // get Layers
         const allLayers = myCPT.soilLayers;
