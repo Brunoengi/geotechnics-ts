@@ -1,4 +1,3 @@
-import { describe, expect, test } from '@jest/globals';
 import CPT from './CPT.js';
 describe('Computacional tests about CPT (Cone Penetration Test)', () => {
     test('Check if all layers have the propertie Quota', () => {

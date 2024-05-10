@@ -1,4 +1,3 @@
-import { describe, expect, test } from '@jest/globals';
 import { StakeParams } from './StakeParams.js';
 describe('Computacional tests about Stake Params based on Aoki Velloso method', () => {
     test('Verify if all possibilities are defined and not null', async () => {

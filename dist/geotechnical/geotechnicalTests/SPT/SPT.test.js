@@ -1,4 +1,3 @@
-import { describe, expect, test } from '@jest/globals';
 import SPT from './SPT.js';
 describe('Computacional tests about SPT (Standart Penetration Test)', () => {
     test('Check properties if is not null or not undefined', () => {

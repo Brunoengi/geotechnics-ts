@@ -1,4 +1,3 @@
-import { describe, expect, test } from '@jest/globals'
 import { SoilParamsWithSPT } from './WithSPT.js'
 import SPT from '../../geotechnicalTests/SPT/SPT.js'
 

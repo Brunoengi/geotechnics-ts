@@ -1,4 +1,3 @@
-import { describe, expect, test } from '@jest/globals';
 import { RectangularStake } from './RectangularStake.js';
 describe('Test about Circular Stake', () => {
     test('checking that all properties of the class are not null or not undefined', () => {

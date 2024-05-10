@@ -11,11 +11,11 @@
     "sourceType": "module"
   },
   "rules": {},
-  "ignorePatterns": ["dist/"],
+  "ignorePatterns": ["dist/", "jest.config.mjs"],
   "overrides": [
     {
       "files": ["*.js", "*.jsx", "*.ts", "*.tsx"],
-      "excludedFiles": "dist/*"
+      "excludedFiles": ["dist/*"]
     }
   ]
 }

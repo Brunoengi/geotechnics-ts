@@ -1,4 +1,3 @@
-import { describe, expect, test } from '@jest/globals'
 import { findIndexMinimalDiferencePosition } from './Find.js'
 
 describe('Computacional tests about Math functions)', () => {

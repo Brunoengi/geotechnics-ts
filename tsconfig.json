@@ -109,6 +109,6 @@
   "include": [
     "src/**/*.ts",
     ".eslintrc.json",
-    "babel.config.js"
+    "jest.config.mjs"
   ]
 }
